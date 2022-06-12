@@ -19,11 +19,11 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav">
-                            <a href="#" class="nav-item nav-link active">Acceuil</a>
-                            <a href="#" class="nav-item nav-link">Blog</a>
+                            <a href="{% url 'index' %}" class="nav-item nav-link active">Acceuil</a>
+                            <a href="{% url 'blogs' %}" class="nav-item nav-link">Blog</a>
                         </div>
                         <div class="navbar-nav ms-auto">
-                            <a href="#" class="nav-item nav-link">Télécharger mon CV</a>
+                            <a href="{% url 'blogs' %}" class="nav-item nav-link">Télécharger mon CV</a>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
             <div class="row">
                 <!-- Left col -->
                 <div class="col-md-3">
-                    <img src="../app/../../static/img/app/photo.jpg" width="100%">
+                    <img src="../app/../../static/img/app/me.jpg" width="100%">
                     <div>
                         <h3 style="font-size:larger;">À propos de moi</h3>
                         <p style="font-size: smaller;">J'ai 23 ans Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium corporis praesentium quia aliquid debitis magnam ullam quis necessitatibus tempora blanditiis et quos reprehenderit, ab aut quaerat sequi illum voluptas est.</p> 
@@ -100,7 +100,7 @@
                     </div>
                     <h2 style="font-size:x-large;">Formations</h2>
                     <div class="container bg-light" style="font-size: 11px;">
-                        <h3 style="font-size:large; color: #ff9c00;">Openclassrooms (OC)</h3>
+                        <h3 style="font-size:large; color: #ff9c00;">Openclassrooms - Développeur d'application Python</h3>
                         <b>Paris - 2020 à 2022</b>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus minus atque quae rerum accusantium, similique autem iste sapiente fugit. Quo modi aliquid autem velit magnam excepturi harum id quod repudiandae?</p>
                     </div>
