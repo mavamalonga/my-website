@@ -1,1 +1,3 @@
-Commande ECHO activ‚e.
+__pycache__/
+venv/
+*.env
