@@ -8,3 +8,9 @@ def index(request):
     context = {'articles': articles}
     return render(request, 'vitrine/index.html')
 
+def mentions_legales(request):
+    return render(request, 'vitrine/mentions.html')
+
+def plan(request):
+    return render(request, 'vitrine/plan.html')
+
