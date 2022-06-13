@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from vitrine.views import index, mentions_legales, plan
+from vitrine.views import index, mentions_legales
 from blog.views import blogs, blog
 
 urlpatterns = [
@@ -9,5 +9,4 @@ urlpatterns = [
     path('blogs/', blogs, name='blogs'),
     path('blogs/<int:blog_id>/', blog, name='blog'),
     path('mentions-legales/', mentions_legales, name='mentions'),
-    path('plan/', plan, name='plan')
 ]
