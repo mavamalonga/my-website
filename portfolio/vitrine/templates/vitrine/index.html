@@ -123,30 +123,31 @@
                     </div>
                     <h2 style="font-size:x-large;">Centre d'intérêt</h2>
                     <div>
-                        <span style="font-size: medium; color: #ff9c00;">Football</span>
-                        <p style="font-size:x-small; margin-left: 3px">Pratique du football en loisir et supporteur de l'Olympique Lyonnais</p>
+                        <div>
+                            <span style="font-size: medium; color: #ff9c00;">Football</span>
+                            <p style="font-size:x-small; margin-left: 3px">Pratique du football en loisir et supporteur de l'Olympique Lyonnais</p>
+                        </div>
+                        <div>
+                            <span style="font-size: medium; color: #ff9c00;">Lecture</span>
+                            <p style="font-size:x-small; margin-left: 3px">Développement personnel, Histoire, Aventure, Fantaisie</p>
+                        </div>
+                        <div>
+                            <span style="font-size: medium; color: #ff9c00;">Blockchain</span>
+                            <p style="font-size:x-small; margin-left: 3px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, verit</p>
+                        </div>
                     </div>
+                    <h2 style="font-size:x-large;">Articles</h2>
                     <div>
-                        <span style="font-size: medium; color: #ff9c00;">Lecture</span>
-                        <p style="font-size:x-small; margin-left: 3px">Développement personnel, Histoire, Aventure, Fantaisie</p>
-                    </div>
-                    <div>
-                        <span style="font-size: medium; color: #ff9c00;">Blockchain</span>
-                        <p style="font-size:x-small; margin-left: 3px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, verit</p>
-                    </div>
-                    <h2 style="font-size:x-large;">Les derniers articles</h2>
-                    <div>
-                        <span style="font-size: small; list-style-type: none; margin-left: 3px;"><a href="#">23/09 - Blog : Stage de la Toussaint</a></span><br>
-                        <hr>
-                        <span style="font-size: small; list-style-type: none; margin-left: 3px;"><a href="#">23/09 - Blog : Stage de la Toussaint</a></span><br>
-                        <hr>
-                        <span style="font-size: small; list-style-type: none; margin-left: 3px;"><a href="#">23/09 - Blog : Stage de la Toussaint</a></span><br>
-                        <hr>
-                        <span style="font-size: small; list-style-type: none; margin-left: 3px;"><a href="#">23/09 - Blog : Stage de la Toussaint</a></span><br>
-                        <hr>
-                        <span style="font-size: small; list-style-type: none; margin-left: 3px;"><a href="#">23/09 - Blog : Stage de la Toussaint</a></span><br>
-                        <hr>
-                        <span style="font-size: small; list-style-type: none; margin-left: 3px;"><a href="#">23/09 - Blog : Stage de la Toussaint</a></span><br>
+                        {% if articles is not None %}
+                            {% for article in articles %}
+                                <span style="font-size: small; list-style-type: none; margin-left: 3px;"><a href="#">23/09 - Blog : Stage de la Toussaint</a></span><br>
+                                <hr>
+                            {% endfor %}
+                        {% else %}
+                            <div style="font-size: medium; list-style-type: none; margin-left: 20px; margin-top: 80px; margin-bottom: 50px;">
+                                Il n'y a pas encore d'articles
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
