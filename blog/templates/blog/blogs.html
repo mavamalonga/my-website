@@ -9,17 +9,60 @@
                     <div>
                         <div class="row">
                           <div class="col-sm-4">
-                            <a href="{% url 'blog' blog_id=1 %}" style="text-decoration: none; ">
-                            <img src="../../static/img/oc_lettings.png" width="100%">
-                            <p width="100%" class="link-dark">Mettre à l'échelle une application Django en utilisant une architecture modulaire<br>
-                              <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wrench" viewBox="0 0 16 16">
-                                <path d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019.528.026.287.445.445.287.026.529L15 13l-.242.471-.026.529-.445.287-.287.445-.529.026L13 15l-.471-.242-.529-.026-.287-.445-.445-.287-.026-.529L11 13l.242-.471.026-.529.445-.287.287-.445.529-.026L13 11l.471.242z"/>
-                              </svg></span> Python, Django, Docker, CircleCi, Heroku, Sentry</p>
-                            </a>
+                            <div class="">
+
+                              <div class="card" style="width: 18rem;">
+                                <img src="../../static/img/oc_lettings.png" width="100%">
+                                <div class="card-body">
+                                  <p class="card-text">Mettre à l'échelle une application Django en utilisant une architecture modulaire</p>
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                    More 
+                                  </button>
+                                  
+                                </div>
+                              </div>
+
+                                <img src="../../static/img/oc_lettings.png" width="100%">
+                                <p width="100%" class="link-dark">Mettre à l'échelle une application Django en utilisant une architecture modulaire<br>
+                                  <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wrench" viewBox="0 0 16 16">
+                                    <path d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019.528.026.287.445.445.287.026.529L15 13l-.242.471-.026.529-.445.287-.287.445-.529.026L13 15l-.471-.242-.529-.026-.287-.445-.445-.287-.026-.529L11 13l.242-.471.026-.529.445-.287.287-.445.529-.026L13 11l.471.242z"/>
+                                  </svg></span> Python, Django, Docker, CircleCi, Heroku, Sentry</p>
+                              
+                              <!-- Button to Open the Modal -->
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                More 
+                              </button>
+                            
+                              <!-- The Modal -->
+                              <div class="modal" id="myModal">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                  
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">Modal Heading</h4>
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                      Modal body..
+                                    </div>
+                                    
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    </div>
+                                    
+                                  </div>
+                                </div>
+                              </div>
+                              
+                            </div>
                           </div>
                           <div class="col-sm-4">
                             <a href="{% url 'blog' blog_id=1 %}" style="text-decoration: none; ">
-                            <img src="../../static/img/litreview.png" width="100%">
+                            <img src="../../static/img/l.png" width="100%">
                             <p width="100%" class="link-dark">Développez une application Web en utilisant Django<br>
                               <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wrench" viewBox="0 0 16 16">
                                 <path d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019.528.026.287.445.445.287.026.529L15 13l-.242.471-.026.529-.445.287-.287.445-.529.026L13 15l-.471-.242-.529-.026-.287-.445-.445-.287-.026-.529L11 13l.242-.471.026-.529.445-.287.287-.445.529-.026L13 11l.471.242z"/>
@@ -108,6 +151,48 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+      <h2>Modal Example</h2>
+      <a href="{% url 'blog' blog_id=1 %}" style="text-decoration: none; ">
+        <img src="../../static/img/algo.png" width="100%">
+        <p width="100%" class="link-dark">Résolvez des problèmes en utilisant des algorithmes en Python<br>
+          <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wrench" viewBox="0 0 16 16">
+            <path d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019.528.026.287.445.445.287.026.529L15 13l-.242.471-.026.529-.445.287-.287.445-.529.026L13 15l-.471-.242-.529-.026-.287-.445-.445-.287-.026-.529L11 13l.242-.471.026-.529.445-.287.287-.445.529-.026L13 11l.471.242z"/>
+          </svg></span> Python, Algorithmes, BIG O, Programmation dynamique
+        </p>
+      <!-- Button to Open the Modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        More 
+      </button>
+    
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body">
+              Modal body..
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
 
     <!-- Pagination -->
     <nav aria-label="..." style="margin-left: 28%; margin-top: 50px;">
