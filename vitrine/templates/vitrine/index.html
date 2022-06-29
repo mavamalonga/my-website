@@ -1,56 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
     <!-- Main -->
-    <div class="container-fluid bg-light">
+    <div class="container-fluid">
         <div class="container">
             <div class="row">
                 <!-- Left col -->
                 <div class="col-md-3">
                     <img src="../app/../../static/img/vitrine/me.jpg" width="100%">
-                    <div class="" style="margin-top: 20px; background-color: white;">
-                        <h3 style="font-size: x-large; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Me contacter</h3>
-                        <div class="row">
-                            <div class="col">
-                                <!-- Linkedin -->
-                                <a href="https://www.linkedin.com/in/alpha-mava-malonga/">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" style="color:#000000" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-                                  </svg>
-                                </a>
-                            </div>
-                            <div class="col">
-                                <!-- Mail -->
-                                <a href="mailto: mavamalonga.alpha@gmail.com">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" style="color: black" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-                                  </svg>
-                                </a>
-                            </div>
-                            <div class="col">
-                                <!-- GitHub -->
-                                <a href="https://github.com/mavamalonga">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" style="color: black" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                                  </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <hr>
+                    <div class="" style="margin-top: 20px;">
                         <h5>Savoir-être</h5>
-                        <p style="font-size: smaller; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Hello world ! Je suis Mava Malonga Alpha, j'ai 24 ans, je suis développeur informatique,
-                           Je vous souhaite la bienvenue sur mon site personnel. <br><br>
+                        <p style="font-size: smaller; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                            Hello world ! Je suis Mava Malonga Alpha, j'ai 24 ans, je suis développeur informatique,
+                           Je vous souhaite la bienvenue sur mon site personnel. 
                            C’est ici que je partage les péripéties de ma vie de développeur, la veille que 
                            je pratique au quotidien, quelques projets personnels et que je présente certains événements auxquels je participe.<br><br>
                            J’espère que ça va vous plaire ! Si vous souhaitez bavarder, si vous avez des questions ou des remarques, si vous souhaitez 
-                           juste me dire bonjour ou me payer un café, n’hésitez pas à me contacter.</p> 
-                        <hr>
+                           juste me dire bonjour ou me payer un café, n’hésitez pas à <a href="mailto: mavamalonga.alpha@gmail.com">me contacter</a>.</p> 
+                        <br>
+                        <h5>Savoir-être</h5>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum natus est quidem aliquid modi error ab, blanditiis vero possimus iure, unde architecto optio, doloremque repellendus similique quibusdam a totam fugit?</p>
                     </div>
                 </div>
                 <!-- Center col -->
                 <div class="col-md-6">
                     <h5>Top Réalisation</h5>
                     <div class="container" width="100%" style="margin-bottom: 10px;">
-                        <div class="card" style="width: 106%; margin-left: -3%;">
+                        <div class="card bg-light" style="width: 106%; margin-left: -3%;">
                           <div class="card-body">
                             <h5>OC Lettings</h5>
                             <!-- Badges -->
@@ -122,7 +97,7 @@
 
                       <div class="container">
                         <div class="card" style="width: 106%; margin-left: -3%;">
-                          <div class="card-body" style="width: 100%;">
+                          <div class="card-body bg-light" style="width: 100%;">
                             <h5>OC Lettings</h5>
                             <!-- Badges -->
                             <div>
@@ -194,31 +169,47 @@
 
                     <br>
                     <h5 class="mb-1">Formations</h5>
-                    <div class="container" style="font-size: smaller; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: white;">
-                        <h3 style="font-size:large; color: #ff9c00;">Openclassrooms - Développeur d'application Python</h3>
-                        <b>Paris - 2020 à 2022</b>
-                        <p style="padding-bottom: 10px;">
-                            Spécialisation en développement d'application python via Openclassrooms.<br>
-                            La formation Openclassrooms se découpe en 13 projets professionalisant d'une complexité croissante, essentielement des projet faite en python.
-                            Ce parcours forme à un métier de développeur back-end python en plus de python, on voit des technologies telles que le SQL, Javascript,
-                            les conteneurs avec Docker, l'automatisation des tâches CI/CD avec Circle et Heroku.</p>
+                    <div class="container" width="100%" style="margin-bottom: 10px;">
+                        <div class="card bg-light" style="width: 106%; margin-left: -3%;">
+                          <div class="card-body" style="font-size: smaller;">
+                            <h5 style="font-size:large; color: #ff9c00;">Openclassrooms - Développeur d'application Python</h5>
+                            <b>Paris - 2020 à 2022</b>
+                            <p style="padding-bottom: 10px;">
+                                Spécialisation en développement d'application python via Openclassrooms.<br>
+                                La formation Openclassrooms se découpe en 13 projets professionalisant d'une complexité croissante, essentielement des projet faite en python.
+                                Ce parcours forme à un métier de développeur back-end python en plus de python, on voit des technologies telles que le SQL, Javascript,
+                                les conteneurs avec Docker, l'automatisation des tâches CI/CD avec Circle et Heroku.
+                            </p>
+                          </div>
+                        </div>
                     </div>
-                    <div class="container" style="font-size: smaller; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: white;">
-                        <h3 style="font-size:large; color: #ff9c00;">Licence Science pour l'Ingénieur (SPI)</h3>
-                        <b>Paris Saclay - 2017 à 2020</b>
-                        <p style="padding-bottom: 10px;">Découverte de l'informatique.
-                            La licence m'a apportée les bases de la programmation (les structures conditionnelles, les boucles, les variables),
-                            j'ai écrit mes premières lignes de code avec le langage Processing, par la suite, j'ai fais de l'assembleur et des projets de modélisation en python.</p>
+                    <div class="container" width="100%" style="margin-bottom: 10px;">
+                        <div class="card bg-light" style="width: 106%; margin-left: -3%;">
+                          <div class="card-body" style="font-size: smaller;">
+                            <h5 style="font-size:large; color: #ff9c00;">Licence Science pour l'Ingénieur (SPI)</h5>
+                            <b>Paris Saclay - 2017 à 2020</b>
+                            <p style="padding-bottom: 10px;">Découverte de l'informatique.
+                                La licence m'a apportée les bases de la programmation (les structures conditionnelles, les boucles, les variables),
+                                j'ai écrit mes premières lignes de code avec le langage Processing, par la suite, j'ai fais de l'assembleur et des projets de modélisation en python.
+                            </p>
+                          </div>
+                        </div>
                     </div>
-                    <div class="container" style="background-color: white; font-size: smaller; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                        <h3 style="font-size:large; color: #ff9c00;">Bac Scientifique (S)</h3>
-                        <b>Lycée Maurice Eliot - 2014 à 2017</b>
-                        <p style="padding-bottom: 10px;">Enseignement scientifique : mathématiques, algorithmes, physique chimie, SVT...<br>Initialisation à la programmation avec Casio Basic programming</p>
+                    <div class="container" width="100%" style="margin-bottom: 10px;">
+                        <div class="card bg-light" style="width: 106%; margin-left: -3%;">
+                          <div class="card-body" style="font-size: smaller;">
+                            <h5 style="font-size:large; color: #ff9c00;">Bac Scientifique (S)</h5>
+                            <b>Paris Saclay - 2017 à 2020</b>
+                            <p style="padding-bottom: 10px;">Découverte de l'informatique.
+                                Enseignement scientifique : mathématiques, algorithmes, physique chimie, SVT...<br>Initialisation à la programmation avec Casio Basic programming
+                            </p>
+                          </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Right col-->
                 <div class="col-md-3">
-                    <h2 style="font-size:x-large;">Compétences</h2>
+                    <h5>Compétences</h5>
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
                           <h2 class="accordion-header" id="flush-headingOne">
