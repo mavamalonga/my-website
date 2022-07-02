@@ -14,7 +14,7 @@ class UserAdmin(UserAdmin):
 @admin.register(Project)
 class ProjectAdmin(ModelAdmin):
     # debug filter method
-    filter_horizontal = ('badges',)
+    filter_horizontal = ('badges', 'skills')
     list_display = ('title', 'id')
 
 admin.site.register(Photo)
