@@ -19,6 +19,8 @@ DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = ['alpha-mavamalonga.herokuapp.com', '127.0.0.1', 'localhost']
 
+AUTH_USER_MODEL = 'APIREST.User'
+
 
 # Application definition
 
@@ -29,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'APIREST',
     'vitrine',
     'blog'
 ]
