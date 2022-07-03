@@ -26,8 +26,8 @@
                 <div class="col-md-6">
                     <!-- Top Reals -->
                     <h5>Top Réalisation</h5>
+                    {% for project in projects %}
                     <div class="container" width="100%" style="margin-bottom: 10px;">
-                      {% for project in projects %}
                       <div class="card" style="width: 106%; margin-left: -3%;">
                         <div class="card-body">
                           <div>
@@ -40,87 +40,77 @@
                             {% endfor %}
                           </div>
                           </div>
-                          <p style="font-size: smaller;">{{ project.project.description }}</p>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                          <p style="font-size: smaller;">{{ project.project.description|truncatechars:155 }}</p>
+                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{ project.project.title }}">
                             Voir plus 
                           </button>
                         </div>
                       </div>
-                    {% endfor %}
-                      </div>
 
-                      <div class="container">
-                        <div class="card" style="width: 106%; margin-left: -3%;">
-                          <div class="card-body" style="width: 100%;">
-                            <img src="../../static/img/litU.png" width="15%" height="15%" style="float: right; margin-right: 30px;">
-                            <h5>OC Lettings</h5>
-                            <!-- Badges -->
-                            <div>
-                              <span class="badge badge-primary">Python</span>
-                              <span class="badge badge-secondary">Django</span>
-                              <span class="badge badge-success">Docker</span>
-                              <span class="badge badge-danger">CircleCi</span>
-                              <span class="badge badge-warning">Heroku</span>
-                              <span class="badge badge-info">Sentry</span>
+                      <!-- Large modal -->
+                      <div class="modal fade bd-example-modal-lg" id="{{ project.project.title }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h5 class="modal-title">{{ project.project.title }}</h5>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
-                            <p style="font-size: smaller; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Mon portfolio personnel qui présente certains de mes projets github ainsi que mon CV et mes compétences techniques.<br>
-                            </p>
-                           
-                            <!-- Button to Open the Modal -->
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                              Voir plus 
-                            </button>
-                          </div>
-                        </div>
-                      
-                        <!-- The Modal -->
-                        <!-- Large modal -->
-                        <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                          <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                              <!-- Modal Header -->
-                              <div class="modal-header">
-                                <h4 class="modal-title">OC Lettings</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              </div>
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <!-- Modal body -->
-                                  <div class="modal-body" width="hei">
-                                    <img src="../../static/img/oc_lettings.png" width="100%">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, est maxime? Vitae quisquam quibusdam, fugit neque velit at libero itaque veniam quam aliquam temporibus suscipit hic mollitia, impedit consequuntur quis?</p>  
-                                  </div>
+                            <div class="row">
+                              <div class="col-md-6">
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                  <img src="{{ project.project.image.image.url }}" width="100%">
+                                  <p style="font-size: smaller;">{{ project.project.description }}</p>
                                 </div>
-                                <div class="col-md-6">
-                                  <!-- Modal body -->
-                                  <div class="modal-body" width="hei">
-                                    <h5>Fonctionnalités</h5>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut culpa tempora rem voluptatum dignissimos laborum nam accusantium exercitationem quidem molestias, debitis tenetur sed, placeat qui nostrum? Quis atque quisquam aliquam.
-                                    <br><br>
-                                    <h5>Compétences</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et laborum, molestiae voluptates dicta sit quidem quaerat sed aperiam facilis dignissimos quas voluptas nostrum? Incidunt ipsa sed non harum maxime quod!</p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                              </div>
+                              <div class="col-md-6">
+
+                                <!-- Modal body -->
+                                <div class="modal-body" width="hei">
+                                  <h6>Savoir-faire</h6>
+                                  <p style="font-size: smaller;">
+                                      <ul style="font-size: smaller;">
+                                        {% for skill in project.skills %}
+                                        <li>{{ skill.description }}</li>
+                                        {% endfor %}
+                                      </ul>
+                                  </p>
+                                  <h6>Technologies</h6>
+                                  <div>
+                                    {% for badge in project.badges %}
+                                      <span class="{{ badge.color }}">{{ badge.name }}</span>
+                                    {% endfor %}
+                                  </div>
+                                  <br>
+                                  <a href="{{ project.project.github }}">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                  </svg>
+                                  </a>
+                                  <a href="{{ project.project.website }}">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                       <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
                                       <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                                    </svg>
-                                    <br>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                                    </svg>
-                                  </div>
+                                  </svg>
+                                  </a>
                                 </div>
                               </div>
-                          
-                              <!-- Modal footer -->
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                              </div>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer" style="margin-bottom: 30px;">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             </div>
                           </div>
                         </div>
-
                       </div>
                       <!--End Modal-->
+                    </div>
+                    {% endfor %}
+                    <!-- End Top Reals -->
 
                     <br>
                     <h5 class="mb-1">Formations</h5>

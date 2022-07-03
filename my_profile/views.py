@@ -4,7 +4,7 @@ from APIREST.models import Project, Skill, Badge
 
 def home(request):
     projects = []
-    for project in  Project.objects.filter(pk__in=[2, 3]):
+    for project in  Project.objects.filter(pk__in=[2, 4]):
         badges = Badge.objects.filter(projects__id=project.id)
         skills = Skill.objects.filter(projects__id=project.id)
         projects.append({'project':project, 'badges':badges, 'skills':skills})
