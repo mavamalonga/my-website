@@ -31,6 +31,7 @@ class Project(models.Model):
 
 class Badge(models.Model):
     name = models.CharField(max_length=50)
+    color = models.CharField(max_length=50, null=True)
     projects = models.ManyToManyField(Project, related_name='projects')
 
     def __str__(self):

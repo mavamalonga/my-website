@@ -28,13 +28,19 @@
                     <h5>Top Réalisation</h5>
                     <div class="container" width="100%" style="margin-bottom: 10px;">
                       {% for project in projects %}
-                    <div class="card" style="width: 106%; margin-left: -3%;">
+                      <div class="card" style="width: 106%; margin-left: -3%;">
                         <div class="card-body">
                           <div>
-                          <img src="{{ project.image.image.url }}" width="15%" height="15%" style="float: right; margin-right: 30px;">
-                          <h5>{{ project.title }}</h5>
+                          <img src="{{ project.project.image.image.url }}" width="15%" height="15%" style="float: right; margin-right: 30px;">
+                          <h5>{{ project.project.title }}</h5>
+                          <!-- Badges -->
+                          <div>
+                            {% for badge in project.badges %}
+                            <span class="{{ badge.color }}">{{ badge.name }}</span>
+                            {% endfor %}
                           </div>
-                          <p style="font-size: smaller;">{{ project.description }}</p>
+                          </div>
+                          <p style="font-size: smaller;">{{ project.project.description }}</p>
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                             Voir plus 
                           </button>

@@ -17,7 +17,7 @@ class ProjectAdmin(ModelAdmin):
 
 @admin.register(Badge)
 class BadgeAdmin(ModelAdmin):
-    list_display = ('title', 'id')
+    list_display = ('name', 'id')
     filter_horizontal = ('projects', )
 
 
