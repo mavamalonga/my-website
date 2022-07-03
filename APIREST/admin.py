@@ -13,14 +13,21 @@ class UserAdmin(UserAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(ModelAdmin):
-    # debug filter method
-    filter_horizontal = ('badges', 'skills')
     list_display = ('title', 'id')
 
+@admin.register(Badge)
+class BadgeAdmin(ModelAdmin):
+    list_display = ('title', 'id')
+    filter_horizontal = ('projects', )
+
+
+@admin.register(Skill)
+class SkillAdmin(ModelAdmin):
+    list_display = ('description', 'id')
+    filter_horizontal = ('projects', )
+
+
 admin.site.register(Photo)
-admin.site.register(Badge)
-admin.site.register(Skill)
-#admin.site.register(Project)
 
 
 

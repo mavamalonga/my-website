@@ -18,8 +18,20 @@ class Photo(models.Model):
         return self.title 
 
 
+class Project(models.Model):
+    title = models.CharField(max_length=128)
+    description = models.CharField(max_length=500)
+    image = models.ForeignKey(Photo, null=True, on_delete=models.SET_NULL, blank=True)
+    github = models.CharField(max_length=128)
+    website = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.title
+
+
 class Badge(models.Model):
     name = models.CharField(max_length=50)
+    projects = models.ManyToManyField(Project, related_name='projects')
 
     def __str__(self):
         return self.name 
@@ -28,19 +40,7 @@ class Badge(models.Model):
 class Skill(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=128)
+    projects = models.ManyToManyField(Project, related_name='Projects')
 
     def __str__(self):
         return self.description
-
-
-class Project(models.Model):
-    title = models.CharField(max_length=128)
-    description = models.CharField(max_length=500)
-    image = models.ForeignKey(Photo, null=True, on_delete=models.SET_NULL, blank=True)
-    badges = models.ManyToManyField(Badge, related_name='badges')
-    skills = models.ManyToManyField(Skill, related_name='skills')
-    github = models.CharField(max_length=128)
-    website = models.CharField(max_length=128)
-
-    def __str__(self):
-        return self.title

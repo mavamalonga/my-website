@@ -4,9 +4,8 @@ from APIREST.models import Project
 
 def home(request):
     projects = Project.objects.all()
-    print(projects)
+    skills = skills.objects.filter()
     for project in projects:
-        print(project.badges)
-        print(project.image.image.url)
+        print(project.skills)
     context = {'projects': projects}
     return render(request, 'my_profile/home.html', context)
