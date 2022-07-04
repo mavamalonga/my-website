@@ -8,468 +8,98 @@
                 <div class="col-md-9">
                     <div>
                         <div class="row">
+                          {% for project in projects %}
                           <div class="col-sm-4">
-                            <div class="">
+                            <div class="" style="margin-bottom: 10px;">
                               <div class="card" style="width: 17rem;">
-                                <img src="../../static/img/oc_lettings.png" width="100%" height="200px">
+                                <img src="{{ project.project.image.image.url }}" width="100%" height="200px">
                                 <div class="card-body">
 
                                   <!-- Badges -->
                                   <div class="">
-                                    <span class="badge badge-primary">Python</span>
-                                    <span class="badge badge-secondary">Django</span>
-                                    <span class="badge badge-success">Docker</span>
-                                    <span class="badge badge-danger">CircleCi</span>
-                                    <span class="badge badge-warning">Heroku</span>
-                                    <span class="badge badge-info">Sentry</span>
+                                    {% for badge in project.badges %}
+                                      <span class="{{ badge.color }}">{{ badge.name }}</span>
+                                    {% endfor %}
                                   </div>
-                                  <p class="card-text">Mettre à l'échelle une application Django en utilisant une architecture modulaire</p>
+                                  <p class="card-text">{{ project.project.description|truncatechars:85 }}</p>
                                   
                                   <!-- Button to Open the Modal -->
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{ project.project.title }}">
                                     Voir plus 
                                   </button>
                                 </div>
                               </div>
                             
-                              <!-- The Modal -->
                               <!-- Large modal -->
-                              <div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                  <div class="modal-content">
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                      <h4 class="modal-title">OC Lettings</h4>
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <!-- Modal body -->
-                                        <div class="modal-body">
-                                          <img src="../../static/img/oc_lettings.png" width="100%">
-                                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut culpa tempora rem voluptatum dignissimos laborum nam accusantium exercitationem quidem molestias, debitis tenetur sed, placeat qui nostrum? Quis atque quisquam aliquam.
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
-                                        <!-- Modal body -->
-                                        <div class="modal-body" width="hei">
-                                          <h5>Fonctionnalités</h5>
-                                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut culpa tempora rem voluptatum dignissimos laborum nam accusantium exercitationem quidem molestias, debitis tenetur sed, placeat qui nostrum? Quis atque quisquam aliquam.
-                                          <br><br>
-                                          <h5>Compétences</h5>
-                                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et laborum, molestiae voluptates dicta sit quidem quaerat sed aperiam facilis dignissimos quas voluptas nostrum? Incidunt ipsa sed non harum maxime quod!</p>
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                                          </svg>
-                                          <br>
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                                          </svg>
-                                        </div>
-                                      </div>
-                                    </div>
-                                
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                      <div class="modal fade bd-example-modal-lg" id="{{ project.project.title }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
 
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                              <h5 class="modal-title">{{ project.project.title }}</h5>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
-                          </div>
+                            <div class="row">
+                              <div class="col-md-6">
 
-                          <div class="col-sm-4">
-
-                            <div class="">
-                              <div class="card" style="width: 17rem;">
-                                <img src="../../static/img/litreview.png" width="100%" height="200px">
-                                <div class="card-body">
-                                  
-                                  <!-- Badges -->
-                                  <div class="">
-                                    <span class="badge badge-primary">Python</span>
-                                    <span class="badge badge-secondary">Django</span>
-                                  </div>
-                                  <p class="card-text">Développez une application Web en utilisant Django</p>
-                                  
-                                  <!-- Button to Open the Modal -->
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                    Voir plus 
-                                  </button>
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                  <img src="{{ project.project.image.image.url }}" width="100%">
+                                  <p style="font-size: smaller;">{{ project.project.description }}</p>
                                 </div>
                               </div>
-                            
-                              <!-- The Modal -->
-                              <div class="modal" id="myModal">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                  
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                      <h4 class="modal-title">Modal Heading</h4>
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                      Modal body..
-                                    </div>
-                                    
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    </div>
-                                    
+                              <div class="col-md-6">
+
+                                <!-- Modal body -->
+                                <div class="modal-body" width="hei">
+                                  <h6>Savoir-faire</h6>
+                                  <p style="font-size: smaller;">
+                                      <ul style="font-size: smaller;">
+                                        {% for skill in project.skills %}
+                                        <li>{{ skill.description }}</li>
+                                        {% endfor %}
+                                      </ul>
+                                  </p>
+                                  <h6>Technologies</h6>
+                                  <div>
+                                    {% for badge in project.badges %}
+                                      <span class="{{ badge.color }}">{{ badge.name }}</span>
+                                    {% endfor %}
                                   </div>
+                                  <br>
+                                  <a href="{{ project.project.github }}">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                  </svg>
+                                  </a>
+                                  <a href="{{ project.project.website }}">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                      <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                      <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                  </svg>
+                                  </a>
                                 </div>
                               </div>
                             </div>
 
+                            <!-- Modal footer -->
+                            <div class="modal-footer" style="margin-bottom: 30px;">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
                           </div>
-                          <div class="col-sm-4">
+                        </div>
+                      </div>
+                      <!--End Modal-->
 
-                            <div class="">
-                              <div class="card" style="width: 17rem;">
-                                <img src="../../static/img/soft.png" width="100%">
-                                <div class="card-body">
-                                  
-                                  <!-- Badges -->
-                                  <div class="">
-                                    <span class="badge badge-primary">Python</span>
-                                    <span class="badge badge-secondary">Django</span>
-                                    <span class="badge badge-secondary">Django REST framework</span>
-                                  </div>
-                                  <p class="card-text">Créez une API sécurisée RESTful en utilisant Django REST</p>
-                                  
-                                  <!-- Button to Open the Modal -->
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                    Voir plus 
-                                  </button>
-                                </div>
-                              </div>
-                            
-                              <!-- The Modal -->
-                              <div class="modal" id="myModal">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                  
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                      <h4 class="modal-title">Modal Heading</h4>
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                      Modal body..
-                                    </div>
-                                    
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    </div>
-                                    
-                                  </div>
-                                </div>
-                              </div>
                             </div>
+                          </div>
+                          {% endfor %}
 
-                          </div>
-                          <div class="col-sm-4">
 
-                            <div class="">
-                              <div class="card" style="width: 17.5rem;">
-                                <img src="../../static/img/epic.png" width="100%">
-                                <div class="card-body">
-                                  
-                                  <!-- Badges -->
-                                  <div class="">
-                                    <span class="badge badge-primary">Python</span>
-                                    <span class="badge badge-secondary">Django</span>
-                                    <span class="badge badge-light">PostgreSQL</span>
-                                    <span class="badge badge-secondary">Django REST framework</span>
-                                  </div>
-                                  <p class="card-text">Développez une architecture back-end sécurisée en utilisant Django ORM</p>
-                                  
-                                  <!-- Button to Open the Modal -->
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                    Voir plus 
-                                  </button>
-                                </div>
-                              </div>
-                            
-                              <!-- The Modal -->
-                              <div class="modal" id="myModal">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                  
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                      <h4 class="modal-title">Modal Heading</h4>
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                      Modal body..
-                                    </div>
-                                    
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    </div>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
 
-                          </div>
-                          <div class="col-sm-4">
-                            <div class="">
-                              <div class="card" style="width: 17.5rem;">
-                                <div class="card-body">
-                                  <img src="../../static/img/gudlft.png" width="100%"><br><br>
-                                  <!-- Badges -->
-                                  <div class="">
-                                    <span class="badge badge-primary">Python</span>
-                                    <span class="badge badge-dark">Flask</span>
-                                    <span class="badge badge-light">PostgreSQL</span>
-                                    <span class="badge badge-secondary">Locust</span>
-                                    <span class="badge badge-secondary">Pytest</span>
-                                    <span class="badge badge-secondary">unittest</span>
-                                  </div>
-                                  <p class="card-text">Améliorez une application Web Python par des tests et du débogage</p>
-                                  
-                                  <!-- Button to Open the Modal -->
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                    Voir plus 
-                                  </button>
-                                </div>
-                              </div>
-                            
-                              <!-- The Modal -->
-                              <div class="modal" id="myModal">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                  
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                      <h4 class="modal-title">Modal Heading</h4>
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                      Modal body..
-                                    </div>
-                                    
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    </div>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          
-                          </div>
-                          <div class="col-sm-4">
-                            <div class="">
-                              <div class="card" style="width: 17.5rem;">
-                                <img src="../../static/img/juststreamit.png" width="100%">
-                                <div class="card-body">
-                                  
-                                  <!-- Badges -->
-                                  <div class="">
-                                    <span class="badge badge-primary">JavaScript</span>
-                                    <span class="badge badge-dark">HTML</span>
-                                    <span class="badge badge-light">CSS</span>
-                                  </div>
-                                  <p class="card-text">Développez une interface utilisateur pour une application web Python</p>
-                                  
-                                  <!-- Button to Open the Modal -->
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                    Voir plus 
-                                  </button>
-                                </div>
-                              </div>
-                            
-                              <!-- The Modal -->
-                              <div class="modal" id="myModal">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                  
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                      <h4 class="modal-title">Modal Heading</h4>
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                      Modal body..
-                                    </div>
-                                    
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    </div>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            
-                          </div>
-                          <div class="col-sm-4">
-                            <div class="">
-                              <div class="card" style="width: 17.5rem;">
-                                <img src="../../static/img/learn.png" width="100%"><br>
-                                <div class="card-body">
-                                  
-                                  <!-- Badges -->
-                                  <div class="">
-                                    <span class="badge badge-primary">UML</span>
-                                    <span class="badge badge-dark">Wireframe</span>
-                                    <span class="badge badge-light">Méthodologies agiles</span>
-                                  </div>
-                                  <p class="card-text">Designez une application Python adaptée aux besoins d'un client</p>
-                                  
-                                  <!-- Button to Open the Modal -->
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                    Voir plus 
-                                  </button>
-                                </div>
-                              </div>
-                            
-                              <!-- The Modal -->
-                              <div class="modal" id="myModal">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                  
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                      <h4 class="modal-title">Modal Heading</h4>
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                      Modal body..
-                                    </div>
-                                    
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    </div>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            
-                          </div>
-                          <div class="col-sm-4">
-                            <div class="">
-                              <div class="card" style="width: 17.5rem;">
-                                <img src="../../static/img/echec.png" width="100%">
-                                <div class="card-body">
-                                  
-                                  <!-- Badges -->
-                                  <div class="">
-                                    <span class="badge badge-primary">Python</span>
-                                    <span class="badge badge-dark">TinyDB</span>
-                                  </div>
-                                  <p class="card-text">Développez un programme logiciel en Python</p>
-                                  
-                                  <!-- Button to Open the Modal -->
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                    Voir plus 
-                                  </button>
-                                </div>
-                              </div>
-                            
-                              <!-- The Modal -->
-                              <div class="modal" id="myModal">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                  
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                      <h4 class="modal-title">Modal Heading</h4>
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                      Modal body..
-                                    </div>
-                                    
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    </div>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            
-                          </div>
-                          <div class="col-sm-4">
-                            <div class="">
-                              <div class="card" style="width: 17.5rem;">
-                                <img src="../../static/img/algo.png" width="100%">
-                                <div class="card-body">
-                                  
-                                  <!-- Badges -->
-                                  <div class="">
-                                    <span class="badge badge-primary">Python</span>
-                                    <span class="badge badge-dark">Algorithmes</span>
-                                    <span class="badge badge-dark">BIG O</span>
-                                    <span class="badge badge-dark">Programmation dynamique</span>
-                                  </div>
-                                  <p class="card-text">Résolvez des problèmes en utilisant des algorithmes en Python</p>
-                                  
-                                  <!-- Button to Open the Modal -->
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                    Voir plus 
-                                  </button>
-                                </div>
-                              </div>
-                            
-                              <!-- The Modal -->
-                              <div class="modal" id="myModal">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                  
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                      <h4 class="modal-title">Modal Heading</h4>
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                      Modal body..
-                                    </div>
-                                    
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    </div>
-                                    
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            
-                          </div>
+  
+    
                         </div>
                       </div>
                 </div>
