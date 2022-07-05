@@ -140,9 +140,19 @@
           <span class="page-link">Previous</span>
         </li>
         {% endif %}
-        <li class="page-item active"><a class="page-link" href="?page=1">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        
+        {% for i in nums_pages %}
+          {% if p_projects.number == forloop.counter %}
+          <li class="page-item active">
+          {% else %}
+          <li class="page-item">
+          {% endif %}
+            <a class="page-link" href="?page={{ forloop.counter }}">
+              {{ forloop.counter }}
+            </a>
+          </li>
+        {% endfor %}
+        
         {% if p_projects.has_next %}
         <li class="page-item">
           <a class="page-link" href="?page={{ p_projects.next_page_number }}">Next</a>
@@ -154,12 +164,4 @@
         {% endif %}
       </ul>
     </nav>
-
-    {{ p_projects }}<br/>
-    Current Page: {{ p_projects.number }}<br/>
-    Number of Pages: {{ p_projects.paginator.num_pages }}<br/>
-
-    
-
-
 {% endblock %}
