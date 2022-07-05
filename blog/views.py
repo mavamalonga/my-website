@@ -7,24 +7,17 @@ import math
 
 
 def blogs(request):
-    if request.GET.get('filter') == 'python':
+
+    technos = ['Python', 'Django', 'Flask', 'JavaScript', 'React', 'Node', 'Rust']
+
+    if request.GET.get('filter') in technos:
         projects = []
         only_projects = []
         for project in  Project.objects.all():
             badges = Badge.objects.filter(projects__id=project.id)
-            python_badges = Badge.objects.filter(name__in=['Python', 'Django', 'Flask'])
+            filter_badge = Badge.objects.get(name=request.GET.get('filter'))
 
-            if python_badges[0] in badges:
-                skills = Skill.objects.filter(projects__id=project.id)
-                projects.append({'project':project, 'badges':badges, 'skills':skills})
-                only_projects.append(project)
-                continue
-            elif python_badges[1] in badges:
-                skills = Skill.objects.filter(projects__id=project.id)
-                projects.append({'project':project, 'badges':badges, 'skills':skills})
-                only_projects.append(project)
-                continue
-            elif python_badges[2] in badges:
+            if filter_badge in badges:
                 skills = Skill.objects.filter(projects__id=project.id)
                 projects.append({'project':project, 'badges':badges, 'skills':skills})
                 only_projects.append(project)
@@ -38,31 +31,6 @@ def blogs(request):
 
         context = {'projects': projects, 'p_projects': p_projects, 'nums_pages': nums_pages}
         return render(request, 'blog/blogs.html', context)
-
-
-    if request.GET.get('filter') == 'django':
-        projects = []
-        only_projects = []
-        for project in  Project.objects.all():
-            badges = Badge.objects.filter(projects__id=project.id)
-            django_badge = Badge.objects.get(name='Django')
-
-            if django_badge in badges:
-                skills = Skill.objects.filter(projects__id=project.id)
-                projects.append({'project':project, 'badges':badges, 'skills':skills})
-                only_projects.append(project)
-                continue
-        
-        # Set up Paginator
-        p = Paginator(only_projects, 9)
-        page = request.GET.get('page')
-        p_projects = p.get_page(page)
-        nums_pages = "a" * p_projects.paginator.num_pages
-
-        context = {'projects': projects, 'p_projects': p_projects, 'nums_pages': nums_pages}
-        return render(request, 'blog/blogs.html', context)
-
-
 
 
     # Set up Paginator
