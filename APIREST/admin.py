@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.contrib.auth.admin import UserAdmin
-from APIREST.models import User, Photo, Badge, Skill, Project
+from APIREST.models import User, Photo, Badge, Skill, Project, CVPDF
 admin.autodiscover()
 
 
@@ -29,6 +29,7 @@ class SkillAdmin(ModelAdmin):
 
 
 admin.site.register(Photo)
+admin.site.register(CVPDF)
 
 
 
