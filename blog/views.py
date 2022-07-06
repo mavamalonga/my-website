@@ -24,7 +24,7 @@ def blogs(request):
                 continue
         
         # Set up Paginator
-        p = Paginator(only_projects, 9)
+        p = Paginator(only_projects, 6)
         page = request.GET.get('page')
         p_projects = p.get_page(page)
         nums_pages = "a" * p_projects.paginator.num_pages
@@ -34,7 +34,7 @@ def blogs(request):
 
 
     # Set up Paginator
-    p = Paginator(Project.objects.all(), 9)
+    p = Paginator(Project.objects.all(), 6)
     page = request.GET.get('page')
     p_projects = p.get_page(page)
     nums_pages = "a" * p_projects.paginator.num_pages

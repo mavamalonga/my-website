@@ -25,6 +25,7 @@ class BadgeAdmin(ModelAdmin):
 class SkillAdmin(ModelAdmin):
     list_display = ('description', 'id')
     filter_horizontal = ('projects', )
+    search_fields = ('description', )
 
 
 admin.site.register(Photo)
