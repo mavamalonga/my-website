@@ -32,8 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'APIREST',
-    'my_profile',
-    'vitrine',
+    'dashboard',
     'blog'
 ]
 
