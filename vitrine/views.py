@@ -1,14 +1,17 @@
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from APIREST.models import CVPDF
+from vitrine.forms import CustomerForm
+
 
 def index(request):
-    """
-    articles = Article.objects.all()
-    articles = sorted(articles, key=lambda k: k.date_published)
-    context = {'articles': articles}
-    """
-    return render(request, 'vitrine/index.html')
+    form = CustomerForm()
+    if request.method == 'POST':
+        form = CustomerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    return render(request, 'vitrine/index.html', context={'form': form})
 
 def mentions_legales(request):
     cv = CVPDF.objects.get(id=1)

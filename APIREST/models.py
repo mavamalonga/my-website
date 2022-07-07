@@ -46,10 +46,12 @@ class Skill(models.Model):
     def __str__(self):
         return self.description
 
-
 class CVPDF(models.Model):
     name = models.CharField(max_length=50)
     pdf = models.FileField(upload_to='pdf')
 
     def __str__(self):
         return self.name
+
+class Customer(models.Model):
+    email = models.EmailField(max_length=150)
