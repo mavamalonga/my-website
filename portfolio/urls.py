@@ -3,13 +3,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from dashboard.views import index, mentions_legales
-from blog.views import blogs
+from projects.views import projects
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('blogs/', blogs, name='blogs'),
-    path('mentions-legales/', mentions_legales, name='mentions'),
+    path('project/', projects, name='projects'),
+    path('mentions-legales/', mentions_legales, name='mentions-legales'),
 ]
 
 if settings.DEBUG:

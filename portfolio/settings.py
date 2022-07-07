@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'APIREST',
     'dashboard',
-    'blog'
+    'projects'
 ]
 
 MIDDLEWARE = [

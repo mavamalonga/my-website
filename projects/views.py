@@ -1,12 +1,9 @@
-from multiprocessing import context
-import django
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, render
 from APIREST.models import Project, Skill, Badge
-import math   
 
 
-def blogs(request):
+def projects(request):
 
     technos = ['Python', 'Django', 'Flask', 'JavaScript', 'React', 'Node', 'Rust']
 
@@ -30,7 +27,7 @@ def blogs(request):
         nums_pages = "a" * p_projects.paginator.num_pages
 
         context = {'projects': projects, 'p_projects': p_projects, 'nums_pages': nums_pages}
-        return render(request, 'blog/blogs.html', context)
+        return render(request, 'projects/projects.html', context)
 
 
     # Set up Paginator
@@ -45,9 +42,5 @@ def blogs(request):
         skills = Skill.objects.filter(projects__id=project.id)
         projects.append({'project':project, 'badges':badges, 'skills':skills})
     context = {'projects': projects, 'p_projects': p_projects, 'nums_pages': nums_pages}
-    return render(request, 'blog/blogs.html', context)
+    return render(request, 'projects/projects.html', context)
 
-def blog(request, blog_id):
-    #article = get_object_or_404(Article, pk=blog_id)
-    #context = {'article': article}
-    return render(request, 'blog/blog.html')
