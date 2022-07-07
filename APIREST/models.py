@@ -53,5 +53,3 @@ class CVPDF(models.Model):
     def __str__(self):
         return self.name
 
-class Customer(models.Model):
-    email = models.EmailField(max_length=150)
