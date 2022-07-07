@@ -25,7 +25,7 @@
                 <!-- Center col -->
                 <div class="col-md-6">
                     <!-- Top Reals -->
-                    <h5>Top Réalisation</h5>
+                    <h5>Top Réalisations</h5>
                     {% for project in projects %}
                     <div class="container" width="100%" style="margin-bottom: 10px;">
                       <div class="card" style="width: 106%; margin-left: -3%;">
@@ -36,12 +36,12 @@
                           <!-- Badges -->
                           <div>
                             {% for badge in project.badges %}
-                            <span class="{{ badge.color }}">{{ badge.name }}</span>
+                            <span class="badge badge-info">{{ badge.name }}</span>
                             {% endfor %}
                           </div>
                           </div>
                           <p style="font-size: smaller;">{{ project.project.description|truncatechars:155 }}</p>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{ project.project.title }}">
+                          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#{{ project.project.title }}">
                             Voir plus 
                           </button>
                         </div>

@@ -18,13 +18,13 @@
                                   <!-- Badges -->
                                   <div class="">
                                     {% for badge in project.badges %}
-                                      <span class="{{ badge.color }}">{{ badge.name }}</span>
+                                      <span class="badge badge-info">{{ badge.name }}</span>
                                     {% endfor %}
                                   </div>
                                   <p class="card-text">{{ project.project.description|truncatechars:85 }}</p>
                                   
                                   <!-- Button to Open the Modal -->
-                                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{ project.project.title }}">
+                                  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#{{ project.project.title }}">
                                     Voir plus 
                                   </button>
                                 </div>
@@ -45,7 +45,7 @@
 
                                         <!-- Modal body -->
                                         <div class="modal-body">
-                                          <img src="{{ project.project.image.image.url }}" width="100%">
+                                          <img src="{{ project.project.image.image.url }}" width="250px">
                                           <p style="font-size: smaller;">{{ project.project.description }}</p>
                                         </div>
                                       </div>
@@ -64,7 +64,7 @@
                                           <h6>Technologies</h6>
                                           <div>
                                             {% for badge in project.badges %}
-                                              <span class="{{ badge.color }}">{{ badge.name }}</span>
+                                              <span class="badge badge-info">{{ badge.name }}</span>
                                             {% endfor %}
                                           </div>
                                           <br>
