@@ -12,13 +12,14 @@ def projects(request):
         only_projects = []
         for project in  Project.objects.all():
             badges = Badge.objects.filter(projects__id=project.id)
-            filter_badge = Badge.objects.get(name=request.GET.get('filter'))
+            filter_badge = get_object_or_404(Badge, name=request.GET.get('filter'))
 
             if filter_badge in badges:
                 skills = Skill.objects.filter(projects__id=project.id)
                 projects.append({'project':project, 'badges':badges, 'skills':skills})
                 only_projects.append(project)
                 continue
+
         
         # Set up Paginator
         p = Paginator(only_projects, 6)
