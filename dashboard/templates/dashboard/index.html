@@ -9,16 +9,25 @@
                 <div class="col-md-3">    
                     <div class="container" style="margin-top: 20px; background-color: white;">
                       <img src="../app/../../static/img/vitrine/me.jpg" width="100%" style="margin-top: 15px; margin-bottom: 15px;">
-                        <h5>A propos de moi</h5>
+                        <h5><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16" style="margin-top: -5px;">
+                          <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                          <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z"/>
+                        </svg> À propos de moi</h5>
                         <p style="font-size: smaller; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                            Hello world ! Je suis Mava Malonga Alpha, j'ai 24 ans, je suis développeur informatique,
+                            Hello world ! Je suis Mava Malonga Alpha, j'ai 24 ans et je suis développeur informatique,
                            Je vous souhaite la bienvenue sur mon site personnel. 
                            C’est ici que je partage les péripéties de ma vie de développeur, la veille que 
                            je pratique au quotidien, quelques projets personnels et que je présente certains événements auxquels je participe.<br><br>
                            J’espère que ça va vous plaire ! Si vous souhaitez bavarder, si vous avez des questions ou des remarques, si vous souhaitez 
                            juste me dire bonjour ou me payer un café, n’hésitez pas à <a href="mailto: mavamalonga.alpha@gmail.com">me contacter</a>.</p> 
-                        <h5>Savoir-être</h5>
-                        <p style="padding-bottom: 30px; font-size: smaller; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum natus est quidem aliquid modi error ab, blanditiis vero possimus iure, unde architecto optio, doloremque repellendus similique quibusdam a totam fugit?</p>
+                        <h5><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16" style="margin-top: -5px;">
+                          <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+                        </svg> Savoir-être</h5>
+                        <p style="padding-bottom: 30px; font-size: smaller; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                          Sens du relationnel, de l’écoute, autonome.<br>
+                          Facilité d’adaptabilité à des univers nouveaux et à des publics variés.<br>
+                          Capacité à travailler en équipe.<br>
+                          Loyale, fiable, flexible et toujours prête à apprendre sont quelques-unes de mes qualités.</p>
                     </div>
                 </div>
 
@@ -54,7 +63,19 @@
 
                             <!-- Modal Header -->
                             <div class="modal-header">
-                              <h5 class="modal-title">{{ project.project.title }}</h5>
+                              <h5 class="modal-title">{{ project.project.title }}
+                                <a href="{{ project.project.github }}">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                  </svg>
+                                  </a>
+                                  <a href="{{ project.project.website }}">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                      <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                      <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                  </svg>
+                                  </a>
+                              </h5>
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div class="row">
@@ -81,21 +102,9 @@
                                   <h6>Technologies</h6>
                                   <div>
                                     {% for badge in project.badges %}
-                                      <span class="{{ badge.color }}">{{ badge.name }}</span>
+                                      <span class="badge badge-info">{{ badge.name }}</span>
                                     {% endfor %}
                                   </div>
-                                  <br>
-                                  <a href="{{ project.project.github }}">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                                  </svg>
-                                  </a>
-                                  <a href="{{ project.project.website }}">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                                      <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                                      <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                                  </svg>
-                                  </a>
                                 </div>
                               </div>
                             </div>
@@ -121,8 +130,8 @@
                             <h5 style="font-size:large; color: #ff9c00;">Développeur d'application Python</h5>
                             <small class="text-muted"><b>Paris 2020-2022</b></small>
                             <p style="padding-bottom: 10px;">
-                                Ce parcours forme à un métier de développeur back-end python en plus de python, 
-                                on voit des technologies telles que le SQL, Javascript,
+                              Construisez des applications web en utilisant le langage de programmation Python et le framework Django.<br>
+                              <img src="../../../media/degree.png" width="17px" height="17px"> Diplôme niveau 6 (bac +3/4)
                             </p>
                           </div>
                         </div>
@@ -134,8 +143,9 @@
                             <h5 style="font-size:large; color: #ff9c00;">Licence Science pour l'Ingénieur (SPI)</h5>
                             <small class="text-muted"><b>Evry 2017-2020</b></small>
                             <p style="padding-bottom: 10px;">
-                                La licence m'a apportée les bases de la programmation (les structures conditionnelles, 
-                                les boucles, les variables), j'ai écrit mes premières lignes
+                              Compétences scientifiques et technologiques.<br>
+                              Enseignement : Mathématiques, physique, électronique, automatique...<br>
+                              Spécialitée génie électrique et informatique industrielle (GEII).
                             </p>
                           </div>
                         </div>
@@ -145,9 +155,10 @@
                           <div class="card-body" style="font-size: smaller;">
                             <img src="../../static/img/lycee.png" width="22%" height="22%" style="float: right;">
                             <h5 style="font-size:large; color: #ff9c00;">Baccalauréat scientifique (S)</h5>
-                            <small class="text-muted"><b>Epinay-sous-sénart 2014-2017</b></small>
+                            <small class="text-muted"><b>Epinay-sous-Sénart 2014-2017</b></small>
                             <p style="padding-bottom: 10px;">
-                                Enseignement scientifique : mathématiques, algorithmes, physique chimie, SVT...<br>Initialisation à la programmation avec Casio Basic programming
+                                Enseignement scientifique : mathématiques, algorithmes, physique chimie, SVT...<br>
+                                Initialisation à la programmation avec Casio Basic programming.
                             </p>
                           </div>
                         </div>
@@ -310,7 +321,7 @@
                                 </div>
                                 <div class="col-md-10">
                                     <span style="font-size: medium; color: #ff9c00;">Blockchain</span>
-                                    <p style="font-size: smaller; margin-left: 3px">- NFT<br>- Metaverse<br>- Play To Earn</p>
+                                    <p style="font-size: smaller; margin-left: 3px">- NFT<br>- Métaverse<br>- Play To Earn</p>
                                 </div>
                             </div>
                         </div>
