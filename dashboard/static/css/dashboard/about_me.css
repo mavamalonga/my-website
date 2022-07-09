@@ -1,0 +1,24 @@
+#container-left {
+    margin-top: 20px; 
+    background-color: white;
+}
+
+#my-photo {
+    width: 100%;
+    margin-top: 15px; 
+    margin-bottom: 15px;
+}
+
+/*icon about me */
+.bi-file-earmark-person .bi-sliders {
+    margin-top: -5px;
+}
+
+.about-me {
+    font-size: smaller; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#about-me-first-p {
+    padding-bottom: 30px;
+}

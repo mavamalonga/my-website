@@ -21,4 +21,4 @@ def index(request):
         'page_name': 'dashboard'})
     
 def mentions_legales(request):
-    return render(request, 'dashboard/mentions.html', context)
+    return render(request, 'dashboard/mentions.html')
