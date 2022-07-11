@@ -1,176 +1,174 @@
 {% extends 'base.html' %}
 {% block content %}
-    <!-- Main -->
-    <div class="container-fluid bg-light">
-        <div class="container">
-            <div class="row">
-                <!-- Left col -->
-                <div class="col-md-9">
-                    <div>
-                        <div class="row">
-                          {% for project in projects %}
-                          <div class="col-sm-4 col-md-4 col-lg-4">
-                            <div class="" style="margin-bottom: 10px;">
-                              <div class="card" style="width: 17rem;">
-                                <img src="{{ project.project.image.image.url }}" width="100%" height="200px">
-                                <div class="card-body">
+<!-- Main -->
+<div class="container-fluid bg-light" style="margin-top: 70px;">
+  <div class="container">
+    <div class="row">
+      <!-- Left col -->
+      <div class="col-md-9">
+        <div>
+          <div class="row">
+            {% for project in projects %}
+            <div class="col-sm-4 col-md-4 col-lg-4">
+              <div class="" style="margin-bottom: 10px;">
+                <div class="card" style="width: 17rem;">
+                  <img src="{{ project.project.image.image.url }}" width="100%" height="200px">
+                  <div class="card-body">
 
-                                  <!-- Badges -->
-                                  <div class="">
-                                    {% for badge in project.badges %}
-                                      <span class="badge badge-info">{{ badge.name }}</span>
-                                    {% endfor %}
-                                  </div>
-                                  <p class="card-text">{{ project.project.description|truncatechars:85 }}</p>
-                                  
-                                  <!-- Button to Open the Modal -->
-                                  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#{{ project.project.title }}">
-                                    Voir plus 
-                                  </button>
-                                </div>
-                              </div>
+                    <!-- Badges -->
+                    <div class="">
+                      {% for badge in project.badges %}
+                        <span class="badge badge-info">{{ badge.name }}</span>
+                      {% endfor %}
+                    </div>
+                    <p class="card-text">{{ project.project.description|truncatechars:85 }}</p>
+                    
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#{{ project.project.title }}">
+                      Voir plus 
+                    </button>
+                  </div>
+                </div>
                             
-                              <!-- Large modal -->
-                              <div class="modal fade bd-example-modal-lg" id="{{ project.project.title }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-lg">
-                                  <div class="modal-content">
+                <!-- Large modal -->
+                <div class="modal fade bd-example-modal-lg" id="{{ project.project.title }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
 
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                      <h5 class="modal-title">{{ project.project.title }}<a href="{{ project.project.github }}">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                                          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                                        </svg>
-                                        </a>
-                                        <a href="{{ project.project.website }}">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
-                                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
-                                        </svg>
-                                        </a></h5>
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-                                    <div class="row">
-                                      <div class="col-md-6">
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h5 class="modal-title">{{ project.project.title }}<a href="{{ project.project.github }}">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                          </svg>
+                          </a>
+                          <a href="{{ project.project.website }}">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                              <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                              <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                          </svg>
+                          </a></h5>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
 
-                                        <!-- Modal body -->
-                                        <div class="modal-body">
-                                          <img src="{{ project.project.image.image.url }}" width="80%">
-                                          <p style="font-size: smaller;">{{ project.project.description }}</p>
-                                        </div>
-                                      </div>
-                                      <div class="col-md-6">
+                          <!-- Modal body -->
+                          <div class="modal-body">
+                            <img src="{{ project.project.image.image.url }}" width="80%">
+                            <p style="font-size: smaller;">{{ project.project.description }}</p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
 
-                                        <!-- Modal body -->
-                                        <div class="modal-body" width="hei">
-                                          <h6>Savoir-faire</h6>
-                                          <p style="font-size: smaller;">
-                                              <ul style="font-size: smaller;">
-                                                {% for skill in project.skills %}
-                                                <li>{{ skill.description }}</li>
-                                                {% endfor %}
-                                              </ul>
-                                          </p>
-                                          <h6>Technologies</h6>
-                                          <div>
-                                            {% for badge in project.badges %}
-                                              <span class="badge badge-info">{{ badge.name }}</span>
-                                            {% endfor %}
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer" style="margin-bottom: 30px;">
-                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <!--End Modal-->
+                          <!-- Modal body -->
+                          <div class="modal-body" width="hei">
+                            <h6>Savoir-faire</h6>
+                            <p style="font-size: smaller;">
+                              <ul style="font-size: smaller;">
+                                {% for skill in project.skills %}
+                                <li>{{ skill.description }}</li>
+                                {% endfor %}
+                              </ul>
+                            </p>
+                            <h6>Technologies</h6>
+                            <div>
+                              {% for badge in project.badges %}
+                                <span class="badge badge-info">{{ badge.name }}</span>
+                              {% endfor %}
                             </div>
                           </div>
-                          {% endfor %}
                         </div>
                       </div>
-                </div>
-                <!-- Right col-->
-                <div class="col-md-3">
-                  <div class="container">
-                    <div class="list-group">
-                      <button type="button" class="list-group-item list-group-item-action disabled"><h4>Filter
-                      </h4>
-                      </button>
-                      <a href="?filter=Python" style="text-decoration: none;">
-                      <button type="button" class="list-group-item list-group-item-action">
-                        Python
-                      </button>
-                      </a>
-                      <a href="?filter=Django" style="text-decoration: none;">
-                      <button type="button" class="list-group-item list-group-item-action">Django
-                      </button>
-                      </a>
-                      <a href="?filter=Flask" style="text-decoration: none;">
-                        <button type="button" class="list-group-item list-group-item-action">Flask</button>
-                      </a>
-                      <a href="?filter=JavaScript" style="text-decoration: none;">
-                      <button type="button" class="list-group-item list-group-item-action">JavaScript</button>
-                      </a>
-                      <a href="?filter=React" style="text-decoration: none;">
-                      <button type="button" class="list-group-item list-group-item-action">React.js</button>
-                      </a>
-                      <a href="?filter=Node" style="text-decoration: none;">
-                        <button type="button" class="list-group-item list-group-item-action">Node.js</button>
-                      </a>
-                      <a href="?filter=Rust" style="text-decoration: none;">
-                        <button type="button" class="list-group-item list-group-item-action">Rust</button>
-                      </a>
+
+                      <!-- Modal footer -->
+                      <div class="modal-footer" style="margin-bottom: 30px;">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <!--End Modal-->
+              </div>
             </div>
+            {% endfor %}
+          </div>
         </div>
-    </div>
-
-    
-
-    <!-- Pagination -->
-    <nav aria-label="..." style="margin-left: 41%; margin-top: 50px;">
-      <ul class="pagination">
-        {% if p_projects.has_previous %}
-        <li class="page-item">
-          <a class="page-link" href="?page={{ p_projects.previous_page_number }}">
-            Previous
-          </a>
-        </li>
-        {% else %}
-        <li class="page-item disabled">
-          <span class="page-link">Previous</span>
-        </li>
-        {% endif %}
-        
-        {% for i in nums_pages %}
-          {% if p_projects.number == forloop.counter %}
-          <li class="page-item active">
-          {% else %}
-          <li class="page-item">
-          {% endif %}
-            <a class="page-link" href="?page={{ forloop.counter }}">
-              {{ forloop.counter }}
+      </div>
+      <!-- Right col-->
+      <div class="col-md-3">
+        <div class="container">
+          <div class="list-group">
+            <button type="button" class="list-group-item list-group-item-action disabled"><h4>Filter
+            </h4>
+            </button>
+            <a href="?filter=Python" style="text-decoration: none;">
+            <button type="button" class="list-group-item list-group-item-action">
+              Python
+            </button>
             </a>
-          </li>
-        {% endfor %}
-        
-        {% if p_projects.has_next %}
-        <li class="page-item">
-          <a class="page-link" href="?page={{ p_projects.next_page_number }}">Next</a>
-        </li>
-        {% else %}
-        <li class="page-item disabled">
-          <a class="page-link" href="#">Next</a>
-        </li>
-        {% endif %}
-      </ul>
-    </nav>
+            <a href="?filter=Django" style="text-decoration: none;">
+            <button type="button" class="list-group-item list-group-item-action">Django
+            </button>
+            </a>
+            <a href="?filter=Flask" style="text-decoration: none;">
+              <button type="button" class="list-group-item list-group-item-action">Flask</button>
+            </a>
+            <a href="?filter=JavaScript" style="text-decoration: none;">
+            <button type="button" class="list-group-item list-group-item-action">JavaScript</button>
+            </a>
+            <a href="?filter=React" style="text-decoration: none;">
+            <button type="button" class="list-group-item list-group-item-action">React.js</button>
+            </a>
+            <a href="?filter=Node" style="text-decoration: none;">
+              <button type="button" class="list-group-item list-group-item-action">Node.js</button>
+            </a>
+            <a href="?filter=Rust" style="text-decoration: none;">
+              <button type="button" class="list-group-item list-group-item-action">Rust</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pagination -->
+<nav aria-label="..." style="margin-left: 41%; margin-top: 50px;">
+  <ul class="pagination">
+    {% if projects_of_pages.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ projects_of_pages.previous_page_number }}">
+        Previous
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <span class="page-link">Previous</span>
+    </li>
+    {% endif %}
+    
+    {% for i in number_of_pages %}
+      {% if projects_of_pages.number == forloop.counter %}
+      <li class="page-item active">
+      {% else %}
+      <li class="page-item">
+      {% endif %}
+        <a class="page-link" href="?page={{ forloop.counter }}">
+          {{ forloop.counter }}
+        </a>
+      </li>
+    {% endfor %}
+    
+    {% if projects_of_pages.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ projects_of_pages.next_page_number }}">Next</a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a class="page-link" href="#">Next</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
 {% endblock %}

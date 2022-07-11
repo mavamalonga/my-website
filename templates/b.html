@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md fixed-top navbar-light bg-white">
+    <!-- <a href="../index.html" class="btn bg-teal text-white position-fixed mt-3 ms-3" data-bs-toggle="tooltip"
+        data-bs-placement="right" title="Ne pas inclure dans l'intégration">Retour</a> -->
+    <div class="container">
+        <a class="navbar-brand text-uppercase fw-bold" href="#">
+          <h1 style="font-size: large; font-family: 'Courier New', Courier, monospace; margin-top: 10px;"><b>MAVA MALONGA Alpha<br><span style="color:#ff9c00; ">Développeur Back-end Python & Django</span></b></h1>
+          <!--<span class="bg-teal bg-gradient p-1 rounded-3">MAVA MALONGA Alpha</span><br>-Développeur Back-end Python & Django-->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}" style="font-weight:bold;">Acceuil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'projects' %}" style="font-weight:bold;">Réalisations</a>
+                </li>
+                {% if page_name == 'dashboard' %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ cv.pdf.url }}" style="font-weight:bold;">Curriculum vitae</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
