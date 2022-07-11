@@ -16,7 +16,7 @@ def index(request):
     # collects badges and skills for each project
     projects = [{'project':project, 'badges':Badge.objects.filter(projects__id=project.id), 
     'skills':Skill.objects.filter(projects__id=project.id)} for project in my_objects]
-        
+
     return render(request, 'dashboard/index.html', {'projects': projects,'cv': curriculum_vitae,
         'page_name': 'dashboard'})
     

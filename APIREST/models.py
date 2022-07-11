@@ -1,12 +1,12 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.conf import settings
 
 
 class User(AbstractUser):
 
-	def __str__(self):
-		return self.first_name
+    def __str__(self):
+        return self.first_name
 
 
 class Photo(models.Model):
@@ -15,7 +15,7 @@ class Photo(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title 
+        return self.title
 
 
 class Project(models.Model):
@@ -35,7 +35,7 @@ class Badge(models.Model):
     projects = models.ManyToManyField(Project, related_name='projects')
 
     def __str__(self):
-        return self.name 
+        return self.name
 
 
 class Skill(models.Model):
@@ -46,10 +46,10 @@ class Skill(models.Model):
     def __str__(self):
         return self.description
 
+
 class CVPDF(models.Model):
     name = models.CharField(max_length=50)
     pdf = models.FileField(upload_to='pdf')
 
     def __str__(self):
         return self.name
-
