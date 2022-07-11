@@ -17,22 +17,24 @@
   <div class="container-fluid">
     <div class="container">
       <nav class="navbar navbar-expand-md fixed-top navbar-light bg-white">
-        <h6 style="font-family: 'Courier New', Courier, monospace;"><b>MAVA MALONGA Alpha<br><span style="color:#ff9c00; ">Développeur Back-end Python & Django</span></b></h6>
+        <a href="{% url 'index' %}" style="text-decoration: none">
+        <h6 style="font-family: 'Courier New', Courier, monospace;"><b style="color: black;">MAVA MALONGA Alpha<br><span style="color:#ff9c00; ">Développeur Back-end Python & Django</span></b></h6>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item active">
-                <a href="{% url 'index' %}" class="nav-item nav-link active" style="font-weight:bold;">Acceuil</a>
+            <li class="nav-item">
+                <a href="{% url 'index' %}" class="nav-item nav-link" style="font-family: 'Courier New', Courier, monospace; font-weight:bold;">Acceuil</a>
             </li>
             <li class="nav-item">
-                <a href="{% url 'projects' %}" class="nav-item nav-link" style="font-weight:bold;">Réalisations</a>
+                <a href="{% url 'projects' %}" class="nav-item nav-link" style="font-family: 'Courier New', Courier, monospace; font-weight:bold;"">Réalisations</a>
             </li>
             {% if page_name == 'dashboard' %}
             <li class="nav item">
-              <a href="{{ cv.pdf.url }}" class="nav-item nav-link" style="font-weight:bold;">Curriculum vitae</a>
+              <a href="{{ cv.pdf.url }}" class="nav-item nav-link" style="font-family: 'Courier New', Courier, monospace; font-weight:bold;">Curriculum vitae</a>
             </li>
             {% endif %}
           </ul>

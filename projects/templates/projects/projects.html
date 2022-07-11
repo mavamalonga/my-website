@@ -38,7 +38,7 @@
                     <div class="modal-content">
 
                       <!-- Modal Header -->
-                      <div class="modal-header">
+                      <div class="modal-header bg-light">
                         <h5 class="modal-title">{{ project.project.title }}</h5>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
@@ -86,7 +86,7 @@
                       </div>
 
                       <!-- Modal footer -->
-                      <div class="modal-footer" style="margin-bottom: 30px;">
+                      <div class="modal-footer bg-light" style="margin-bottom: 30px;">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                       </div>
                     </div>
@@ -121,15 +121,9 @@
             <a href="?filter=JavaScript" style="text-decoration: none;">
             <button type="button" class="list-group-item list-group-item-action">JavaScript</button>
             </a>
-            <a href="?filter=React" style="text-decoration: none;">
-            <button type="button" class="list-group-item list-group-item-action">React.js</button>
-            </a>
-            <a href="?filter=Node" style="text-decoration: none;">
-              <button type="button" class="list-group-item list-group-item-action">Node.js</button>
-            </a>
-            <a href="?filter=Rust" style="text-decoration: none;">
-              <button type="button" class="list-group-item list-group-item-action">Rust</button>
-            </a>
+            <button type="button" class="list-group-item list-group-item-action disabled">React.js</button>
+            <button type="button" class="list-group-item list-group-item-action disabled">Node.js</button>
+            <button type="button" class="list-group-item list-group-item-action disabled">Rust</button>
           </div>
         </div>
       </div>
