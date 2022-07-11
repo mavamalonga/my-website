@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -128,7 +129,14 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+TESTING = len(sys.argv) > 1 and sys.argv[1] == 'test'
+
+STATICFILES_STORAGE = (
+    'django.contrib.staticfiles.storage.StaticFilesStorage'
+    if TESTING
+    else 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.joinpath('media/')
