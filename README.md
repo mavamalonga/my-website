@@ -7,15 +7,6 @@ My personal portfolio which presents some of my github projects as well as my re
 
 ## Local testing
 
-### Prérequis
-
-- Compte GitHub avec accès en lecture à ce repository
-- Git CLI
-- SQLite3 CLI
-- Interpréteur Python, version 3.6 ou supérieure
-
-Dans le reste de la documentation sur le développement local, il est supposé que la commande `python` de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
-
 ### Creating Virtual environment and downloading the program:
 
 You need Python 3 (tested on 3.10), git and venv installed on your machine.
@@ -82,7 +73,7 @@ source venv/bin/activate
 flake8
 ```
 
-#### Tests unitaires
+#### Unit tests
 
 ```bash
 d /path/to/my-website
@@ -90,57 +81,55 @@ source venv/bin/activate
 python manage.py test
 ```
 
-## Mise en place de l'intégration et déploiement continu (Pipeline CI/CD)
+## Implementation of integration and continuous deployment (CI/CD Pipeline)
 
-### Les étapes du Pipeline CI/CD 
+### The stages of the CI/CD Pipeline  
 
 ### 1) unittest-and-linter 
-CircleCi créer un environnement virtuel, installe les dépendances du project et éxécute l'ensemble des tests unitaires de l'application puis, CircleCI lance flake8 pour vérifier la confomité du code selon les règles PEP8 définit dans le fichier setup.cfg.
-Si les tests réussissent CircleCi passe au job suivant, sinon l'éxécution s'arrête puis CircleCi renvoie la cause de l'echec.
-Cette étape ne filtre pas les branches, elle sera éxécutée lors de chaque commit sur une branche du repository GitHub.
+CircleCi creates a virtual environment, installs the project dependencies and runs all the unit tests for the application. CircleCi then runs flake8 to check the consistency of the code according to the PEP8 rules defined in the setup.cfg file.
+If the tests are successful CircleCi moves on to the next job, otherwise the execution stops and CircleCi returns the cause of the failure.
+This step does not filter the branches, it will be executed at each commit on a branch of the GitHub repository.
 
-Vous pouvez éxécuter ces étapes avec une container docker en local.
-- Ouvrez un terminal et déplacez vous dans le répertoire racine du project
-- Lancer la commande `docker build --tag app_name:latest .` 
-- Ouvrez Docker desktop, cliquez sur images puis lancez le container créee avec le bouton run
-- Allez dans containers/app et ouvrez le terminal CLI du container
-- Tapez les commandes suivantes: <br>
-    `python manage.py test` <br>
-    `flake8 --max-line-length=99` <br>
+```bash
+python manage.py test
+flake8 --max-line-length=99
+```
 
 ### 2) build-and-push-docker-image
-CircleCi crée un container docker à partir du fichier Dockerfile du projet puis, 
-une fois l'image créee elle est publiée sur le compte Docker Hub assigné.
-Cette étape s'éxécute uniquement pour les commits faite sur la branche `main` du repository GitHub.
+CircleCi creates a docker container from the project's Dockerfile and then, 
+once the image is created it is published on the assigned Docker Hub account.
+This step is only performed for commits made on the `main` branch of the GitHub repository.
 
-Pour faire la même chose en local.
-- Ouvrez un terminal et déplacez vous dans le répertoire racine contenant le fichier Dockerfile
-- Tapez les commandes suivantes : <br>
-    `docker login -u DOCKERHUB_USER -p DOCKERHUB_PASS` <br>
-    `docker build -t DOCKERHUB_USER/oc_lettings:lastest .` <br>
-    `docker push DOCKERHUB_USER/oc_lettings:lastest` <br>
+```bash 
+docker login -u DOCKERHUB_USER -p DOCKERHUB_PASS
+docker build -t DOCKERHUB_USER/oc_lettings:lastest .
+docker push DOCKERHUB_USER/oc_lettings:lastest
+```
 
 ### 3) deploy-on-heroku
-CircleCi fait la liaison avec le compte heroku grâce à l'API Key puis, procède à la configuration de l'environemment de production en mentionnant les valeurs des variables SECRET_KEY, HEROKU_APP_NAME pour identifier l'application, DEBUG, et dsn pour Sentry. <br>
-Une fois la configuration finit, une image et créee à partir de Dockerfile puis deployée sur heroku en production.<br>Cette étape s'éxécute uniquement pour les commits faite sur la branche `main` du repository GitHub.
+CircleCi makes the connection with the heroku account thanks to the Key API then, proceeds to the configuration of the production environment by mentioning the values of the variables SECRET_KEY, HEROKU_APP_NAME to identify the application, DEBUG, and dsn for Sentry. <br>
+Once the configuration is finished, an image is created from Dockerfile and then deployed to heroku in production.<br>This step only executes for commits made on the `main` branch of the GitHub repository.
 <br>
 
-Pour faire la même chose manuellement.
-Tout d'abord veillez à enregistrer les variables SECRET_KEY, DEBUG, dsn dans le fichier .env
-du projet puis, suivez les étapes suivantes:
-- Ouvrez un terminal et déplacez vous dans le répertoire racine contenant le fichier Dockerfile
-- Tapez les commandes suivantes : <br>
-    `heroku container:login` <br>
-    `heroku container:push web --app NOM_APP_HEROKU` <br>
-    `heroku container:release --app NOM_APP_HEROKU web` <br>
+```bash
+heroku container:login
+heroku container:push web --app NOM_APP_HEROKU
+heroku container:release --app NOM_APP_HEROKU web
+```
 
-#### Lancer l'application en local
-Si vous souhaitez éxécuter votre application en local avec une image docker, suivez les étapes suivantes: <br>
-- Pour récupérer une image existant depuis Docker Hub <br>
-    `docker pull DOCKERHUB_USER/IMAGE_NAME:TAG_IMAGE` <br>
-    `docker run --name IMAGE_NAME -d -p PORT:PORT DOCKERHUB_USER/IMAGE_NAME:TAG_IMAGE` <br>
-- Pour une image existante dans Docker desktop <br>
-    `docker run --name IMAGE_NAME -d -p PORT:PORT DOCKERHUB_USER/IMAGE_NAME:TAG_IMAGE` <br>
+#### Local testing with Docker
+
+- To retrieve an existing image from Docker Hub <br>
+```bash
+docker pull DOCKERHUB_USER/IMAGE_NAME:TAG_IMAGE
+docker run --name IMAGE_NAME -d -p PORT:PORT DOCKERHUB_USER/IMAGE_NAME:TAG_IMAGE
+```
+
+- For an existing image in Docker desktop <br>
+```bash
+docker run --name IMAGE_NAME -d -p PORT:PORT DOCKERHUB_USER/IMAGE_NAME:TAG_IMAGE
+```
 
 ### Contact
-Pour tout autre question contactez-moi par mail : mavamalonga.alpha@gmail.com
+For any other questions contact me by email :
+mavamalonga.alpha@gmail.com
