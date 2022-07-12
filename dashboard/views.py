@@ -12,13 +12,14 @@ def index(request):
     # return an error if there are no projects
     if not my_objects:
         raise Http404("Projects does not exist")
-    
-    # collects badges and skills for each project
-    projects = [{'project':project, 'badges':Badge.objects.filter(projects__id=project.id), 
-    'skills':Skill.objects.filter(projects__id=project.id)} for project in my_objects]
 
-    return render(request, 'dashboard/index.html', {'projects': projects,'cv': curriculum_vitae,
+    # collects badges and skills for each project
+    projects = [{'project': project, 'badges': Badge.objects.filter(projects__id=project.id),
+    'skills': Skill.objects.filter(projects__id=project.id)} for project in my_objects]
+
+    return render(request, 'dashboard/index.html', {'projects': projects, 'cv': curriculum_vitae,
         'page_name': 'dashboard'})
-    
+
+
 def mentions_legales(request):
     return render(request, 'dashboard/mentions.html')

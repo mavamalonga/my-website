@@ -19,11 +19,12 @@ class ProjectsTest(unittest.TestCase):
         self.assertIn(b'<h5 class="modal-title">MacGyver</h5>', response.content)
 
     def test_pagination(self):
-        #Curriculum vitae are correctly identified
+        # Curriculum vitae are correctly identified
         client = Client()
         response = client.get('/project/?page=2')
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'<h5 class="modal-title">MacGyver</h5>', response.content)
+
 
 if __name__ == "__main__":
     unittest.main()

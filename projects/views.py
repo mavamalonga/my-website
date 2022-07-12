@@ -8,13 +8,13 @@ def projects(request):
 
     # My technological expertise
     techs = ['Python', 'Django', 'Flask', 'JavaScript', 'React', 'Node', 'Rust']
-    
+
     queryset = Project.objects.all()
 
     # selects the projects of a technology
     if request.GET.get('filter') in techs:
         queryset = [project for project in Project.objects.all()
-            if get_object_or_404(Badge, name=request.GET.get('filter')) in 
+            if get_object_or_404(Badge, name=request.GET.get('filter')) in
             Badge.objects.filter(projects__id=project.id)]
 
     # Set up Paginator
@@ -25,8 +25,9 @@ def projects(request):
 
     # filter badges and project tasks
     projects = [
-        {'project':project, 'badges':Badge.objects.filter(projects__id=project.id), 
-        'skills':Skill.objects.filter(projects__id=project.id)} for project in  projects_of_page]
-  
-    context = {'projects': projects, 'projects_of_page': projects_of_page, 'number_of_pages': number_of_pages}
+        {'project': project, 'badges': Badge.objects.filter(projects__id=project.id),
+        'skills': Skill.objects.filter(projects__id=project.id)} for project in projects_of_page]
+
+    context = {'projects': projects, 'projects_of_page': projects_of_page,
+        'number_of_pages': number_of_pages}
     return render(request, 'projects/projects.html', context)

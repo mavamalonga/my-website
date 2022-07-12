@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from django.conf import settings
 
 
 class Photo(models.Model):
@@ -9,14 +8,14 @@ class Photo(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title 
+        return self.title
 
 
 class Badge(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.name 
+        return self.name
 
 
 class Skill(models.Model):
