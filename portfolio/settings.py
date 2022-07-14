@@ -46,9 +46,7 @@ DEBUG = get_debug()
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS = ['https://alpha-mavamalonga.herokuapp.com/']
-
-CSRF_COOKIE_SECURE = False
+CSRF_TRUSTED_ORIGINS = ['https://alpha-mavamalonga.herokuapp.com']
 
 AUTH_USER_MODEL = 'APIREST.User'
 
