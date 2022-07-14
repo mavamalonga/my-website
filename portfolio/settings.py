@@ -41,13 +41,14 @@ def get_debug():
         return boolean(os.getenv("DEBUG"))
     return False
 
+
 DEBUG = get_debug()
 
 ALLOWED_HOSTS = ['*']
 
-CSRF_TRUSTED_ORIGINS=['https://alpha-mavamalonga.herokuapp.com/']
+CSRF_TRUSTED_ORIGINS = ['https://alpha-mavamalonga.herokuapp.com/']
 
-CSRF_COOKIE_SECURE=False
+CSRF_COOKIE_SECURE = False
 
 AUTH_USER_MODEL = 'APIREST.User'
 
