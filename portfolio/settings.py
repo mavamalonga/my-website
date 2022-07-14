@@ -1,6 +1,7 @@
 import os
 import sys
 from pathlib import Path
+from xmlrpc.client import boolean
 from dotenv import load_dotenv
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -37,13 +38,16 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 def get_debug():
     if os.getenv("DEBUG") is not None:
-        return int(os.getenv("DEBUG"))
-    return 0
-
+        return boolean(os.getenv("DEBUG"))
+    return False
 
 DEBUG = get_debug()
 
-ALLOWED_HOSTS = ['alpha-mavamalonga.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS=['https://alpha-mavamalonga.herokuapp.com/']
+
+CSRF_COOKIE_SECURE=False
 
 AUTH_USER_MODEL = 'APIREST.User'
 
