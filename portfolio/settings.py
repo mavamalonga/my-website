@@ -39,6 +39,7 @@ def get_debug():
         return int(os.getenv("DEBUG"))
     return 0
 
+
 DEBUG = get_debug()
 
 ALLOWED_HOSTS = ['alpha-mavamalonga.herokuapp.com', '127.0.0.1', 'localhost']
