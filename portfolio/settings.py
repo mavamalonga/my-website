@@ -38,22 +38,20 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 def get_debug():
     if os.getenv("DEBUG") is not None:
-        return boolean(os.getenv("DEBUG"))
+        return int(os.getenv("DEBUG"))
     return False
 
 
 DEBUG = get_debug()
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', 'https://alpha-mavamalonga.herokuapp.com']
 
+# A list of trusted origins for unsafe requests
 CSRF_TRUSTED_ORIGINS = ['https://alpha-mavamalonga.herokuapp.com']
 
 AUTH_USER_MODEL = 'APIREST.User'
 
-
 # Application definition
-
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

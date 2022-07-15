@@ -32,11 +32,9 @@
             <li class="nav-item">
                 <a href="{% url 'projects' %}" class="nav-item nav-link" style="font-family: 'Courier New', Courier, monospace; font-weight:bold;">Réalisations</a>
             </li>
-            {% if page_name == 'dashboard' %}
             <li class="nav item">
-              <a href="{{ cv.pdf.url }}" class="nav-item nav-link" style="font-family: 'Courier New', Courier, monospace; font-weight:bold;">Curriculum vitae</a>
+              <a href="{{ curriculum_vitae.pdf.url }}" class="nav-item nav-link" style="font-family: 'Courier New', Courier, monospace; font-weight:bold;">Curriculum vitae</a>
             </li>
-            {% endif %}
           </ul>
         </div>
       </nav>

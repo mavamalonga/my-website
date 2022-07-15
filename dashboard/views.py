@@ -17,9 +17,11 @@ def index(request):
     projects = [{'project': project, 'badges': Badge.objects.filter(projects__id=project.id),
     'skills': Skill.objects.filter(projects__id=project.id)} for project in my_objects]
 
-    return render(request, 'dashboard/index.html', {'projects': projects, 'cv': curriculum_vitae,
-        'page_name': 'dashboard'})
+    return render(request, 'dashboard/index.html', {'projects': projects,
+        'curriculum_vitae': curriculum_vitae})
 
 
 def mentions_legales(request):
-    return render(request, 'dashboard/mentions.html')
+    # collect cv and top projects objects
+    curriculum_vitae = get_object_or_404(CVPDF, pk=1)
+    return render(request, 'dashboard/mentions.html', {'curriculum_vitae': curriculum_vitae})
