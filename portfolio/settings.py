@@ -38,7 +38,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 def get_debug():
     if os.getenv("DEBUG") is not None:
-        return int(os.getenv("DEBUG"))
+        return boolean(os.getenv("DEBUG"))
     return False
 
 
