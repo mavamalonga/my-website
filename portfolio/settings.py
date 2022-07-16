@@ -44,7 +44,7 @@ def get_debug():
 
 DEBUG = get_debug()
 
-ALLOWED_HOSTS = ['localhost', 'alpha-mavamalonga.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'alpha-mavamalonga.herokuapp.com', '127.0.0.1:8000']
 
 # A list of trusted origins for unsafe requests
 CSRF_TRUSTED_ORIGINS = ['https://alpha-mavamalonga.herokuapp.com']

@@ -20,13 +20,16 @@ class Photo(models.Model):
 
 class Project(models.Model):
     title = models.CharField(max_length=128)
-    description = models.CharField(max_length=500)
+    description = models.TextField(max_length=5000)
     image = models.ForeignKey(Photo, null=True, on_delete=models.SET_NULL, blank=True)
     github = models.CharField(max_length=128)
     website = models.CharField(max_length=128)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['-id']
 
 
 class Badge(models.Model):

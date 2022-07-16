@@ -15,7 +15,7 @@ def projects(request):
 
     # selects the projects of a technology
     if request.GET.get('filter') in techs:
-        queryset = [project for project in Project.objects.all()
+        queryset = [project for project in Project.objects.get_queryset().order_by('id')
             if get_object_or_404(Badge, name=request.GET.get('filter')) in
             Badge.objects.filter(projects__id=project.id)]
 
