@@ -4,6 +4,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+from xmlrpc.client import boolean
 
 sentry_sdk.init(
     dsn=os.getenv('SENTRY_SDK'),
@@ -37,7 +38,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 def get_debug():
     if os.getenv("DEBUG") is not None:
-        return int(os.getenv("DEBUG"))
+        return boolean(os.getenv("DEBUG"))
     return False
 
 
