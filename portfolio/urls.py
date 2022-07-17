@@ -17,6 +17,7 @@ urlpatterns = [
     path('mentions-legales/', mentions_legales, name='mentions-legales'),
 ]
 
+# The URL to use when referring to static files (where they will be served from)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += [re_path(r'^media/(?P<path>.*)$', serve,
     {'document_root': settings.MEDIA_ROOT, }), ]
