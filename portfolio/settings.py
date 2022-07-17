@@ -1,7 +1,6 @@
 import os
 import sys
 from pathlib import Path
-from xmlrpc.client import boolean
 from dotenv import load_dotenv
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -38,13 +37,13 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 def get_debug():
     if os.getenv("DEBUG") is not None:
-        return boolean(os.getenv("DEBUG"))
+        return int(os.getenv("DEBUG"))
     return False
 
 
 DEBUG = get_debug()
 
-ALLOWED_HOSTS = ['localhost', 'alpha-mavamalonga.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['*']
 
 # A list of trusted origins for unsafe requests
 CSRF_TRUSTED_ORIGINS = ['https://alpha-mavamalonga.herokuapp.com']
@@ -66,13 +65,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -149,7 +148,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]

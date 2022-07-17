@@ -1,0 +1,5 @@
+#flush-collapseOne .accordion-body a, #flush-collapseTwo .accordion-body a,
+#panelsStayOpen-collapseThree .accordion-body a, #flush-collapseThree .accordion-body a,
+#panelsStayOpen-headingFive .accordion-body a {
+    cursor: pointer;
+}

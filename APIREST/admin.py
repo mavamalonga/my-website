@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.contrib.auth.admin import UserAdmin
-from APIREST.models import User, Photo, Badge, Skill, Project, CVPDF
+from APIREST.models import User, Photo, Badge, Task, Project, CurriculumVitae
 
 
 @admin.register(User)
@@ -23,12 +23,16 @@ class BadgeAdmin(ModelAdmin):
     filter_horizontal = ('projects', )
 
 
-@admin.register(Skill)
+@admin.register(Task)
 class SkillAdmin(ModelAdmin):
     list_display = ('description', 'id')
     filter_horizontal = ('projects', )
     search_fields = ('description', )
 
 
-admin.site.register(Photo)
-admin.site.register(CVPDF)
+@admin.register(Photo)
+class PhotoAdmin(ModelAdmin):
+    list_display = ('title', 'id')
+
+
+admin.site.register(CurriculumVitae)

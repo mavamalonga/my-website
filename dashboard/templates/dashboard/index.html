@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static '../../../../static/css/dashboard/about_me.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static '../../../../static/css/dashboard/top_projects.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static '../../../../static/css/dashboard/degrees.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static '../../../../static/css/dashboard/technos.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static '../../../../static/css/dashboard/hobbies.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/about_me.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/top_projects.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/degrees.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/technos.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/hobbies.css' %}">
 
 <!-- Main -->
 <div class="container-fluid bg-light" style="margin-top: 80px;">
@@ -15,7 +15,7 @@
       <!-- Left col -->
       <div class="col-md-3">
         <div class="container" id="container-left">
-          <img src="../../../../static/img/dashboard/me.jpg" id="my-photo">
+          <img src="{% static 'img/dashboard/me.jpg' %}" id="my-photo">
             <h6>
               À propos de moi
             </h6>
@@ -92,8 +92,8 @@
                         <h6>Compétences</h6>
                         <p>
                           <ul>
-                            {% for skill in project.skills %}
-                            <li>{{ skill.description }}</li>
+                            {% for task in project.tasks %}
+                            <li>{{ task.description }}</li>
                             {% endfor %}
                           </ul>
                         </p>
@@ -126,12 +126,12 @@
           <div class="container container-degrees">
               <div class="card">
                 <div class="card-body">
-                  <img src="../../static/img/dashboard/oc_logo.png" class="icon-institut">
+                  <img src="{% static 'img/dashboard/oc_logo.png' %}" class="icon-institut">
                   <h5>Développeur d'application Python</h5>
                   <small class="text-muted"><b>Paris 2020-2022</b></small>
                   <p>
                     Construisez des applications web en utilisant le langage de programmation Python et le framework Django.<br>
-                    <img src="../../../media/degree.png" id="icon-degree"> Diplôme niveau 6 (bac +3/4)
+                    <img src="{% static 'img/dashboard/degree.png' %}" id="icon-degree"> Diplôme niveau 6 (bac +3/4)
                   </p>
                 </div>
               </div>
@@ -139,7 +139,7 @@
           <div class="container container-degrees">
               <div class="card">
                 <div class="card-body">
-                  <img src="../../static/img/saclays.png" class="icon-institut">
+                  <img src="{% static 'img/dashboard/saclays.png' %}" class="icon-institut">
                   <h5>Licence Science pour l'Ingénieur (SPI)</h5>
                   <small class="text-muted"><b>Evry 2017-2020</b></small>
                   <p>
@@ -153,7 +153,7 @@
           <div class="container container-degrees">
               <div class="card">
                 <div class="card-body">
-                  <img src="../../static/img/lycee.png" id="icon-lycee">
+                  <img src="{% static 'img/dashboard/lycee.png' %}" id="icon-lycee">
                   <h5>Baccalauréat scientifique (S)</h5>
                   <small class="text-muted"><b>Epinay-sous-Sénart 2014-2017</b></small>
                   <p>
@@ -311,7 +311,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-2">
-                <img src="../../static/img/dashboard/book.png">
+                <img src="{% static 'img/dashboard/book.png' %}">
               </div>
               <div class="col-md-10">
                 <span>Lecture</span>      
@@ -321,7 +321,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-2">
-                <img src="../../static/img/dashboard/ballon.png">
+                <img src="{% static 'img/dashboard/ballon.png' %}">
               </div>
               <div class="col-md-10">
                 <span>Football</span>
@@ -331,7 +331,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-2">
-                <img src="../../static/img/dashboard/blockchain.png">
+                <img src="{% static 'img/dashboard/blockchain.png' %}">
               </div>
               <div class="col-md-10" style="margin-bottom: 30px;">
                 <span>Web3</span>

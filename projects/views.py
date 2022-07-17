@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, render
-from APIREST.models import Project, Skill, Badge, CVPDF
+from APIREST.models import Project, Task, Badge, CurriculumVitae
 
 
 def projects(request):
     # collect cv and top projects objects
-    curriculum_vitae = get_object_or_404(CVPDF, pk=1)
+    curriculum_vitae = get_object_or_404(CurriculumVitae, pk=1)
 
     # My technological expertise
     techs = ['Python', 'Django', 'Flask', 'JavaScript', 'React', 'Node', 'Rust']
@@ -28,7 +28,7 @@ def projects(request):
     # filter badges and project tasks
     projects = [
         {'project': project, 'badges': Badge.objects.filter(projects__id=project.id),
-        'skills': Skill.objects.filter(projects__id=project.id)} for project in projects_of_page]
+        'tasks': Task.objects.filter(projects__id=project.id)} for project in projects_of_page]
 
     context = {'projects': projects, 'projects_of_page': projects_of_page,
         'number_of_pages': number_of_pages, 'curriculum_vitae': curriculum_vitae}

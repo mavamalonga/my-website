@@ -41,7 +41,7 @@ class Badge(models.Model):
         return self.name
 
 
-class Skill(models.Model):
+class Task(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=128)
     projects = models.ManyToManyField(Project, related_name='Projects')
@@ -50,7 +50,7 @@ class Skill(models.Model):
         return self.description
 
 
-class CVPDF(models.Model):
+class CurriculumVitae(models.Model):
     name = models.CharField(max_length=50)
     pdf = models.FileField(upload_to='pdf')
 

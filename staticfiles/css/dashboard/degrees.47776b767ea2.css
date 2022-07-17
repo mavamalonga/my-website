@@ -1,0 +1,40 @@
+.container-degrees {
+    width:100%;
+    margin-bottom: 10px;
+}
+
+.container-degrees .card {
+    width: 106%; 
+    margin-left: -3%;
+}
+
+.container-degrees .card .card-body {
+    font-size: smaller;
+}
+
+.container-degrees .card .card-body .icon-institut {
+    width:30%;
+    height:30%;
+    float: right;
+}
+
+.container-degrees .card .card-body #icon-lycee {
+    width:22%;
+    height:22%;
+    float: right;
+}
+
+
+.container-degrees .card .card-body h5 {
+    font-size:large; 
+    color: #ff9c00;
+}
+
+.container-degrees .card .card-body p {
+    padding-bottom: 10px;
+}
+
+.container-degrees .card .card-body #icon-degree {
+    width: 17px;
+    height: 17px;
+}

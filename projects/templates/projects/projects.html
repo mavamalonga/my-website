@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<!--<link rel="stylesheet" type="text/css" href="{% static '../../../../static/css/projects/projects.css' %}">-->
 <style>
   .card {
     width: 17rem;
@@ -109,8 +108,8 @@
                             <h6>Compétences</h6>
                             <p style="font-size: smaller;">
                               <ul style="font-size: smaller;">
-                                {% for skill in project.skills %}
-                                <li>{{ skill.description }}</li>
+                                {% for task in project.tasks %}
+                                <li>{{ task.description }}</li>
                                 {% endfor %}
                               </ul>
                             </p>
