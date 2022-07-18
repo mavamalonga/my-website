@@ -2,8 +2,10 @@
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, render
 from APIREST.models import Project, Task, Badge, CurriculumVitae
+from django.views.decorators.cache import cache_page
 
 
+@cache_page(60 * 15)
 def projects(request):
     # collect cv and top projects objects
     curriculum_vitae = get_object_or_404(CurriculumVitae, pk=1)

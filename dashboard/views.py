@@ -2,8 +2,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from APIREST.models import Project, Task, Badge, CurriculumVitae
+from django.views.decorators.cache import cache_page
 
 
+@cache_page(60 * 15)
 def index(request):
     # collect curriculum vitae and top projects objects
     curriculum_vitae = get_object_or_404(CurriculumVitae, pk=1)

@@ -6,14 +6,15 @@ from dashboard.views import index, mentions_legales
 from projects.views import projects
 from portfolio.views import handler404, handler500
 from django.views.static import serve
+from django.views.decorators.cache import cache_page
 
 handler404 = "portfolio.views.handler404"
 handler500 = "portfolio.views.handler500"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
-    path('project/', projects, name='projects'),
+    path('', cache_page(60 * 15)(index), name='index'),
+    path('project/', cache_page(60 * 15)(projects), name='projects'),
     path('mentions-legales/', mentions_legales, name='mentions-legales'),
 ]
 
