@@ -8,8 +8,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard/hobbies.css' %}">
 
 <!-- Main -->
-<div class="container-fluid bg-light" style="margin-top: 80px;">
-  <div class="container">
+  <div class="container" style="margin-top: 80px;">
     <div class="row">
 
       <!-- Left col -->
@@ -47,7 +46,7 @@
             <div class="card">
               <div class="card-body">
                 <div>
-                  <img src="{{ project.project.image.image.url }}">
+                  <img src="{{ project.project.image.url }}">
                   <h5>{{ project.project.title }}</h5>
                   <!-- Badges -->
                   <div>
@@ -69,7 +68,7 @@
                 <div class="modal-content">
                   <!-- Modal Header -->
                   <div class="modal-header bg-light">
-                    <img src="{{ project.project.image.image.url }}" width="50px" style="padding-right: 10px;">
+                    <img src="{{ project.project.image.url }}" width="50px" style="padding-right: 10px;">
                     <h5 class="modal-title" style="margin-top: -3px;">{{ project.project.title }}</h5>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
@@ -344,5 +343,5 @@
       </div>
     </div>
   </div>
-</div>
+
 {% endblock %}
