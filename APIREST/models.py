@@ -47,3 +47,11 @@ class CurriculumVitae(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Analytic(models.Model):
+    page_title = models.CharField(max_length=50)
+    visits = models.IntegerField()
+
+    def __str__(self) -> str:
+        return self.page_title

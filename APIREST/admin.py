@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.contrib.auth.admin import UserAdmin
-from APIREST.models import User, Badge, Task, Project, CurriculumVitae
+from APIREST.models import User, Badge, Task, Project, CurriculumVitae, Analytic
 
 
 @admin.register(User)
@@ -30,4 +30,11 @@ class TaskAdmin(ModelAdmin):
     search_fields = ('description', )
 
 
-admin.site.register(CurriculumVitae)
+@admin.register(Analytic)
+class AnalyticAdmin(ModelAdmin):
+    list_display = ('page_title', 'visits')
+
+
+@admin.register(CurriculumVitae)
+class CurriculumVitaeAdmin(ModelAdmin):
+    list_display = ('name', 'id')
