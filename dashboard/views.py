@@ -42,6 +42,6 @@ def mentions_legales(request):
 
 @cache_page(60 * 15)
 def curriculum_vitae(request):
-    # collect cv and top projects objects
+    # display cv
     filepath = os.path.join('media/pdf', 'cv_developer_mavamalonga.pdf')
     return FileResponse(open(filepath, 'rb'), content_type='application/pdf')
