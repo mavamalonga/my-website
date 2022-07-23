@@ -37,7 +37,7 @@ def index(request):
 
 @cache_page(60 * 15)
 def mentions_legales(request):
-    return render(request, 'dashboard/mentions.html')
+    return render(request, 'dashboard/dashboard.html')
 
 
 @cache_page(60 * 15)
