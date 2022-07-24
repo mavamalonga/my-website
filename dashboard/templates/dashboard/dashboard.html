@@ -35,6 +35,7 @@
     <title>My Portfolio</title>
   </head>
   <body>
+
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
       <nav class="nav container">
@@ -407,14 +408,15 @@
         <h2 class="section__title">Projects récents</h2>
 
         <div class="work__filter">
-          <span class="work__item active-work" data-filter="all">Tout</span>
-          <span class="work__item" data-filter=".web">Python</span>
-          <span class="work__item" data-filter=".movil">Django</span>
-          <span class="work__item" data-filter=".design">Flask</span>
-          <span class="work__item" data-filter=".design">JavaScript</span>
+          <span class="work__item active-work" onclick="get_projects('/')">Tout</span>
+          <span class="work__item" onclick="get_projects('api/project')">Python</span>
+          <span class="work__item" onclick="get_projects('/')">Django</span>
+          <span class="work__item" onclick="get_projects('/')">Flask</span>
+          <span class="work__item" onclick="get_projects('')">JavaScript</span>
         </div>
 
         <div class="work__container container grid">
+          <!-- work 1 -->
           <div class="work__card mix web">
             <img src="{% static 'img/dashboard/work1.jpg' %}" alt="work 1" class="work__img" /><br>
             <span class="badge badge-info">Python</span>
@@ -473,44 +475,311 @@
                 </ul>
               </div>
             </div>
-
-
           </div>
-          <div class="work__card mix movil">
-            <img src="{% static 'img/dashboard/work2.jpg' %}" alt="work 1" class="work__img" />
 
-            <h3 class="work__title">App movil</h3>
-
-            <a href="#" class="work__button">
-              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
-            </a>
-          </div>
-          <div class="work__card mix design">
-            <img src="{% static 'img/dashboard/work3.jpg' %}" alt="work 1" class="work__img" />
-
-            <h3 class="work__title">Brand design</h3>
-
-            <a href="#" class="work__button">
-              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
-            </a>
-          </div>
+          <!-- work 2 -->
           <div class="work__card mix web">
-            <img src="{% static 'img/dashboard/work4.jpg' %}" alt="work 1" class="work__img" />
+            <img src="{% static 'img/dashboard/work1.jpg' %}" alt="work 1" class="work__img" /><br>
+            <span class="badge badge-info">Python</span>
+                      
+            <span class="badge badge-info">Pygame</span>
 
             <h3 class="work__title">Web design</h3>
 
-            <a href="#" class="work__button">
+            <a class="work__button" style="text-decoration: none; cursor: pointer;">
               Demo <i class="bx bx-right-arrow-alt work__icon"></i>
             </a>
+
+            <div class="works__modal">
+              <div class="works__modal-content">
+                <i class="bx bx-x works__modal-close"></i>
+
+                <h3 class="works__modal-title">Product Designer</h3>
+                <p class="works__modal-description">
+                  Service with more than 3 years of experience. Providing
+                  quality work to clients and companies.
+                </p>
+
+                <ul class="works__modal-list">
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I develop the user interface.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">Web page development.</p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I create ux element interactions.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I position your company brand.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="work__card mix movil">
-            <img src="{% static 'img/dashboard/work5.jpg' %}" alt="work 1" class="work__img" />
 
-            <h3 class="work__title">App movil</h3>
+          <!-- work 3 -->
+          <div class="work__card mix web">
+            <img src="{% static 'img/dashboard/work1.jpg' %}" alt="work 1" class="work__img" /><br>
+            <span class="badge badge-info">Python</span>
+                      
+            <span class="badge badge-info">Pygame</span>
 
-            <a href="#" class="work__button">
+            <h3 class="work__title">Web design</h3>
+
+            <a class="work__button" style="text-decoration: none; cursor: pointer;">
               Demo <i class="bx bx-right-arrow-alt work__icon"></i>
             </a>
+
+            <div class="works__modal">
+              <div class="works__modal-content">
+                <i class="bx bx-x works__modal-close"></i>
+
+                <h3 class="works__modal-title">Product Designer</h3>
+                <p class="works__modal-description">
+                  Service with more than 3 years of experience. Providing
+                  quality work to clients and companies.
+                </p>
+
+                <ul class="works__modal-list">
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I develop the user interface.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">Web page development.</p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I create ux element interactions.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I position your company brand.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- work 4 -->
+          <div class="work__card mix web">
+            <img src="{% static 'img/dashboard/work1.jpg' %}" alt="work 1" class="work__img" /><br>
+            <span class="badge badge-info">Python</span>
+                      
+            <span class="badge badge-info">Pygame</span>
+
+            <h3 class="work__title">Web design</h3>
+
+            <a class="work__button" style="text-decoration: none; cursor: pointer;">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+
+            <div class="works__modal">
+              <div class="works__modal-content">
+                <i class="bx bx-x works__modal-close"></i>
+
+                <h3 class="works__modal-title">Product Designer</h3>
+                <p class="works__modal-description">
+                  Service with more than 3 years of experience. Providing
+                  quality work to clients and companies.
+                </p>
+
+                <ul class="works__modal-list">
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I develop the user interface.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">Web page development.</p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I create ux element interactions.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I position your company brand.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- work 5 -->
+          <div class="work__card mix web">
+            <img src="{% static 'img/dashboard/work1.jpg' %}" alt="work 1" class="work__img" /><br>
+            <span class="badge badge-info">Python</span>
+                      
+            <span class="badge badge-info">Pygame</span>
+
+            <h3 class="work__title">Web design</h3>
+
+            <a class="work__button" style="text-decoration: none; cursor: pointer;">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+
+            <div class="works__modal">
+              <div class="works__modal-content">
+                <i class="bx bx-x works__modal-close"></i>
+
+                <h3 class="works__modal-title">Product Designer</h3>
+                <p class="works__modal-description">
+                  Service with more than 3 years of experience. Providing
+                  quality work to clients and companies.
+                </p>
+
+                <ul class="works__modal-list">
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I develop the user interface.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">Web page development.</p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I create ux element interactions.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I position your company brand.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- work 6 -->
+          <div class="work__card mix web">
+            <img src="{% static 'img/dashboard/work1.jpg' %}" alt="work 1" class="work__img" /><br>
+            <span class="badge badge-info">Python</span>
+                      
+            <span class="badge badge-info">Pygame</span>
+
+            <h3 class="work__title">Web design</h3>
+
+            <a class="work__button" style="text-decoration: none; cursor: pointer;">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+
+            <div class="works__modal">
+              <div class="works__modal-content">
+                <i class="bx bx-x works__modal-close"></i>
+
+                <h3 class="works__modal-title">Product Designer</h3>
+                <p class="works__modal-description">
+                  Service with more than 3 years of experience. Providing
+                  quality work to clients and companies.
+                </p>
+
+                <ul class="works__modal-list">
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I develop the user interface.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">Web page development.</p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I create ux element interactions.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I position your company brand.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
