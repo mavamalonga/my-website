@@ -9,7 +9,8 @@ function fetch_api(request_url){
   
 
 function get_projects(){
-    const url = "http://localhost:8000/api/project"
+    //const url = "http://localhost:8000/api/project"
+    const url = 'https://alpha-mavamalonga.herokuapp.com/api/project'
     const work_card = document.querySelectorAll(".work__card");
 
     fetch_api(url).then(function(result) {

@@ -4,7 +4,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
-from datetime import timedelta
 
 sentry_sdk.init(
     dsn=os.getenv('SENTRY_SDK'),

@@ -1,4 +1,5 @@
-from rest_framework.permissions import BasePermission, SAFE_METHODS
+# -*- coding: utf-8 -*-
+from rest_framework.permissions import BasePermission
 
 
 class StaffPermission(BasePermission):
@@ -7,9 +8,9 @@ class StaffPermission(BasePermission):
     def has_permission(self, request, view):
         if request.method in ['GET']:
             return True
-        return request.user.is_staff == True
+        return request.user.is_staff
 
     def has_object_permission(self, request, view, obj):
         if request.method in ['GET']:
             return True
-        return request.user.is_staff == True
+        return request.user.is_staff

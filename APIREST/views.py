@@ -1,10 +1,9 @@
+# -*- coding: utf-8 -*-
 from rest_framework.viewsets import ModelViewSet
-from rest_framework import serializers
-from django.shortcuts import get_object_or_404
 from APIREST.models import Project, Badge, Task
 from APIREST.serializers import ProjectSerializer, BadgeSerializer, TaskSerializer
 from APIREST.permissions import StaffPermission
-import requests
+
 
 class ProjectViewset(ModelViewSet):
     permission_classes = [StaffPermission]
@@ -12,7 +11,7 @@ class ProjectViewset(ModelViewSet):
 
     def get_queryset(self):
         return Project.objects.all().order_by('id')
-       
+
 
 class BadgeViewset(ModelViewSet):
     permission_classes = [StaffPermission]

@@ -130,6 +130,46 @@ docker run --name IMAGE_NAME -d -p PORT:PORT DOCKERHUB_USER/IMAGE_NAME:TAG_IMAGE
 docker run --name IMAGE_NAME -d -p PORT:PORT DOCKERHUB_USER/IMAGE_NAME:TAG_IMAGE
 ```
 
+### API Documentation
+
+<table>
+    <tr>
+        <th>API endpoint</th>
+        <th>HTTP method</th>
+        <th>URI</th>
+    </tr>
+    <tr>
+        <td>Get the list of projects</td>
+        <td>GET</td>
+        <td>api/project/</td>
+    </tr>
+    <tr>
+        <td>Get a single project</td>
+        <td>GET</td>
+        <td>api/project/{id}/</td>
+    </tr>
+    <tr>
+        <td>Get the list of badges</td>
+        <td>GET</td>
+        <td>api/badge/</td>
+    </tr>
+    <tr>
+        <td>Get a single badge</td>
+        <td>GET</td>
+        <td>api/badge/{id}/</td>
+    </tr>
+    <tr>
+        <td>Get the list of tasks</td>
+        <td>GET</td>
+        <td>api/task/</td>
+    </tr>
+    <tr>
+        <td>Get a single task</td>
+        <td>GET</td>
+        <td>api/task/{id}/</td>
+    </tr>
+</table>
+
 ### Contact
 For any other questions contact me by email :
 mavamalonga.alpha@gmail.com
