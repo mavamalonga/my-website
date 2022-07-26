@@ -408,24 +408,24 @@
         <h2 class="section__title">Projects récents</h2>
 
         <div class="work__filter">
-          <span class="work__item active-work" onclick="get_projects('/')">Tout</span>
-          <span class="work__item" onclick="get_projects('api/project')">Python</span>
-          <span class="work__item" onclick="get_projects('/')">Django</span>
-          <span class="work__item" onclick="get_projects('/')">Flask</span>
-          <span class="work__item" onclick="get_projects('')">JavaScript</span>
+          <span class="work__item active-work" data-filter="all">Tout</span>
+          <span class="work__item" data-filter=".python">Python</span>
+          <span class="work__item" data-filter=".django">Django</span>
+          <span class="work__item" data-filter=".flask">Flask</span>
+          <span class="work__item" data-filter=".js">JavaScript</span>
         </div>
 
         <div class="work__container container grid">
           <!-- work 1 -->
           <div class="work__card mix web">
-            <img src="{% static 'img/dashboard/work1.jpg' %}" alt="work 1" class="work__img" /><br>
+            <img src="" alt="work 1" class="work__img" /><br>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
 
-            <h3 class="work__title">Web design</h3>
+            <h3 class="work__title"></h3>
 
             <a class="work__button" style="text-decoration: none; cursor: pointer;">
               Demo <i class="bx bx-right-arrow-alt work__icon"></i>
@@ -433,45 +433,46 @@
 
             <div class="works__modal">
               <div class="works__modal-content">
+                <a href="https://github.com/mavamalonga" class="footer__social-link">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
                 <i class="bx bx-x works__modal-close"></i>
 
-                <h3 class="works__modal-title">Product Designer</h3>
+                <h3 class="works__modal-title"></h3>
                 <p class="works__modal-description">
-                  Service with more than 3 years of experience. Providing
-                  quality work to clients and companies.
                 </p>
 
+                <span class="section__subtitle">Compétences</span><br>
                 <ul class="works__modal-list">
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      I develop the user interface.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
-                    <p class="works__modal-info">Web page development.</p>
+                    <p class="works__modal-info"></p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      I create ux element interactions.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      I position your company brand.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      Design and mockups of products for companies.
                     </p>
                   </li>
                 </ul>
@@ -488,7 +489,7 @@
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
 
-            <h3 class="work__title">Web design</h3>
+            <h3 class="work__title"></h3>
 
             <a class="work__button" style="text-decoration: none; cursor: pointer;">
               Demo <i class="bx bx-right-arrow-alt work__icon"></i>
@@ -496,45 +497,46 @@
 
             <div class="works__modal">
               <div class="works__modal-content">
+                <a href="https://github.com/mavamalonga" class="footer__social-link">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
                 <i class="bx bx-x works__modal-close"></i>
 
-                <h3 class="works__modal-title">Product Designer</h3>
+                <h3 class="works__modal-title"></h3>
                 <p class="works__modal-description">
-                  Service with more than 3 years of experience. Providing
-                  quality work to clients and companies.
                 </p>
 
+                <span class="section__subtitle">Compétences</span><br>
                 <ul class="works__modal-list">
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      I develop the user interface.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
-                    <p class="works__modal-info">Web page development.</p>
+                    <p class="works__modal-info"></p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      I create ux element interactions.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      I position your company brand.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      Design and mockups of products for companies.
                     </p>
                   </li>
                 </ul>
@@ -544,14 +546,14 @@
 
           <!-- work 3 -->
           <div class="work__card mix web">
-            <img src="{% static 'img/dashboard/work1.jpg' %}" alt="work 1" class="work__img" /><br>
+            <img src="" alt="work 1" class="work__img" /><br>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
 
-            <h3 class="work__title">Web design</h3>
+            <h3 class="work__title"></h3>
 
             <a class="work__button" style="text-decoration: none; cursor: pointer;">
               Demo <i class="bx bx-right-arrow-alt work__icon"></i>
@@ -559,6 +561,12 @@
 
             <div class="works__modal">
               <div class="works__modal-content">
+                <a href="https://github.com/mavamalonga" class="footer__social-link">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
                 <i class="bx bx-x works__modal-close"></i>
 
                 <h3 class="works__modal-title">Product Designer</h3>
@@ -567,34 +575,35 @@
                   quality work to clients and companies.
                 </p>
 
+                <span class="section__subtitle">Compétences</span><br>
                 <ul class="works__modal-list">
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       I develop the user interface.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">Web page development.</p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       I create ux element interactions.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       I position your company brand.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       Design and mockups of products for companies.
@@ -607,7 +616,7 @@
 
           <!-- work 4 -->
           <div class="work__card mix web">
-            <img src="{% static 'img/dashboard/work1.jpg' %}" alt="work 1" class="work__img" /><br>
+            <img src="" alt="work 1" class="work__img" /><br>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
@@ -622,6 +631,12 @@
 
             <div class="works__modal">
               <div class="works__modal-content">
+                <a href="https://github.com/mavamalonga" class="footer__social-link">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
                 <i class="bx bx-x works__modal-close"></i>
 
                 <h3 class="works__modal-title">Product Designer</h3>
@@ -630,34 +645,35 @@
                   quality work to clients and companies.
                 </p>
 
+                <span class="section__subtitle">Compétences</span><br>
                 <ul class="works__modal-list">
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       I develop the user interface.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">Web page development.</p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       I create ux element interactions.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       I position your company brand.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       Design and mockups of products for companies.
@@ -670,7 +686,7 @@
 
           <!-- work 5 -->
           <div class="work__card mix web">
-            <img src="{% static 'img/dashboard/work1.jpg' %}" alt="work 1" class="work__img" /><br>
+            <img src="" alt="work 1" class="work__img" /><br>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
@@ -685,6 +701,12 @@
 
             <div class="works__modal">
               <div class="works__modal-content">
+                <a href="https://github.com/mavamalonga" class="footer__social-link">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
                 <i class="bx bx-x works__modal-close"></i>
 
                 <h3 class="works__modal-title">Product Designer</h3>
@@ -693,34 +715,35 @@
                   quality work to clients and companies.
                 </p>
 
+                <span class="section__subtitle">Compétences</span><br>
                 <ul class="works__modal-list">
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       I develop the user interface.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">Web page development.</p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       I create ux element interactions.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       I position your company brand.
                     </p>
                   </li>
 
-                  <li class="works__modal-item">
+                  <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
                       Design and mockups of products for companies.
@@ -733,7 +756,7 @@
 
           <!-- work 6 -->
           <div class="work__card mix web">
-            <img src="{% static 'img/dashboard/work1.jpg' %}" alt="work 1" class="work__img" /><br>
+            <img src="" alt="work 1" class="work__img" /><br>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
@@ -793,6 +816,428 @@
               </div>
             </div>
           </div>
+
+          <!-- work 7-->
+          <div class="work__card mix web">
+            <img src="" alt="work 1" class="work__img" /><br>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+
+            <h3 class="work__title">Web design</h3>
+
+            <a class="work__button" style="text-decoration: none; cursor: pointer;">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+
+            <div class="works__modal">
+              <div class="works__modal-content">
+                <a href="https://github.com/mavamalonga" class="footer__social-link">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
+                <i class="bx bx-x works__modal-close"></i>
+
+                <h3 class="works__modal-title">Product Designer</h3>
+                <p class="works__modal-description">
+                  Service with more than 3 years of experience. Providing
+                  quality work to clients and companies.
+                </p>
+
+                <span class="section__subtitle">Compétences</span><br>
+                <ul class="works__modal-list">
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I develop the user interface.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">Web page development.</p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I create ux element interactions.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I position your company brand.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- work 8-->
+          <div class="work__card mix web">
+            <img src="" alt="work 1" class="work__img" /><br>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+
+            <h3 class="work__title">Web design</h3>
+
+            <a class="work__button" style="text-decoration: none; cursor: pointer;">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+
+            <div class="works__modal">
+              <div class="works__modal-content">
+                <a href="https://github.com/mavamalonga" class="footer__social-link">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
+                <i class="bx bx-x works__modal-close"></i>
+
+                <h3 class="works__modal-title">Product Designer</h3>
+                <p class="works__modal-description">
+                  Service with more than 3 years of experience. Providing
+                  quality work to clients and companies.
+                </p>
+
+                <span class="section__subtitle">Compétences</span><br>
+                <ul class="works__modal-list">
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I develop the user interface.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">Web page development.</p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I create ux element interactions.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I position your company brand.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- work 9-->
+          <div class="work__card mix web">
+            <img src="" alt="work 1" class="work__img" /><br>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+
+            <h3 class="work__title">Web design</h3>
+
+            <a class="work__button" style="text-decoration: none; cursor: pointer;">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+
+            <div class="works__modal">
+              <div class="works__modal-content">
+                <a href="https://github.com/mavamalonga" class="footer__social-link">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
+                <i class="bx bx-x works__modal-close"></i>
+
+                <h3 class="works__modal-title">Product Designer</h3>
+                <p class="works__modal-description">
+                  Service with more than 3 years of experience. Providing
+                  quality work to clients and companies.
+                </p>
+
+                <span class="section__subtitle">Compétences</span><br>
+                <ul class="works__modal-list">
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I develop the user interface.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">Web page development.</p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I create ux element interactions.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I position your company brand.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- work 10 -->
+          <div class="work__card mix web">
+            <img src="" alt="work 1" class="work__img" /><br>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+
+            <h3 class="work__title">Web design</h3>
+
+            <a class="work__button" style="text-decoration: none; cursor: pointer;">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+
+            <div class="works__modal">
+              <div class="works__modal-content">
+                <a href="https://github.com/mavamalonga" class="footer__social-link">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
+                <i class="bx bx-x works__modal-close"></i>
+
+                <h3 class="works__modal-title">Product Designer</h3>
+                <p class="works__modal-description">
+                  Service with more than 3 years of experience. Providing
+                  quality work to clients and companies.
+                </p>
+
+                <span class="section__subtitle">Compétences</span><br>
+                <ul class="works__modal-list">
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I develop the user interface.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">Web page development.</p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I create ux element interactions.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I position your company brand.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- work 11-->
+          <div class="work__card mix web">
+            <img src="" alt="work 1" class="work__img" /><br>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+
+            <h3 class="work__title">Web design</h3>
+
+            <a class="work__button" style="text-decoration: none; cursor: pointer;">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+
+            <div class="works__modal">
+              <div class="works__modal-content">
+                <a href="https://github.com/mavamalonga" class="footer__social-link">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
+                <i class="bx bx-x works__modal-close"></i>
+
+                <h3 class="works__modal-title">Product Designer</h3>
+                <p class="works__modal-description">
+                  Service with more than 3 years of experience. Providing
+                  quality work to clients and companies.
+                </p>
+
+                <span class="section__subtitle">Compétences</span><br>
+                <ul class="works__modal-list">
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I develop the user interface.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">Web page development.</p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I create ux element interactions.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I position your company brand.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- work 12 -->
+          <div class="work__card mix web">
+            <img src="" alt="work 1" class="work__img" /><br>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+            <span class="badge badge-info"></span>
+
+            <h3 class="work__title">Web design</h3>
+
+            <a class="work__button" style="text-decoration: none; cursor: pointer;">
+              Demo <i class="bx bx-right-arrow-alt work__icon"></i>
+            </a>
+
+            <div class="works__modal">
+              <div class="works__modal-content">
+                <a href="https://github.com/mavamalonga" class="footer__social-link">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
+                  <i class="bx bxl-linkedin-square"></i>
+                </a>
+                <i class="bx bx-x works__modal-close"></i>
+
+                <h3 class="works__modal-title">Product Designer</h3>
+                <p class="works__modal-description">
+                  Service with more than 3 years of experience. Providing
+                  quality work to clients and companies.
+                </p>
+
+                <span class="section__subtitle">Compétences</span><br>
+                <ul class="works__modal-list">
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I develop the user interface.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">Web page development.</p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I create ux element interactions.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      I position your company brand.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
+                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </section>
 

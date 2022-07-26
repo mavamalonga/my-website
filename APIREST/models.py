@@ -13,6 +13,7 @@ class Project(models.Model):
     title = models.CharField(max_length=128)
     description = models.TextField(max_length=5000)
     image = models.ImageField(upload_to='project', null=True)
+    framework = models.CharField(max_length=50, null=True)
     github = models.CharField(max_length=128)
     website = models.CharField(max_length=128)
 

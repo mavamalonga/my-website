@@ -549,7 +549,7 @@ body.light-theme {
   position: fixed;
   inset: 0;
   background: hsla(var(--second-hue), 28%, 16%, 0.7);
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   display: grid;
   place-items: center;
   visibility: hidden;
@@ -565,8 +565,7 @@ body.light-theme {
 }
 .services__modal-title,
 .services__modal-description,
-.works__modal-title,
-.works__modal-description {
+.works__modal-title {
   text-align: center;
 }
 .services__modal-title,
@@ -578,7 +577,7 @@ body.light-theme {
 .services__modal-description,
 .works__modal-description {
   font-size: var(--small-font-size);
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 .services__modal-list,
 .works__modal-list {
@@ -589,7 +588,7 @@ body.light-theme {
 .works__modal-item {
   display: flex;
   align-items: flex-start;
-  column-gap: 0.5rem;
+  column-gap: 0.1rem;
 }
 .services__modal-icon,
 .works__modal-icon {
@@ -945,7 +944,7 @@ body.light-theme {
 
   .services__modal-description,
   .works__modal-description {
-    padding: 0 3.5rem;
+    padding: 0 0.2rem;
   }
 
   .work__container {
