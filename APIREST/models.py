@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from pyexpat import model
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -56,3 +57,13 @@ class Analytic(models.Model):
 
     def __str__(self) -> str:
         return self.page_title
+
+
+class Message(models.Model):
+    name = models.CharField(max_length=50)
+    mail = models.EmailField()
+    message = models.TextField(max_length=5000)
+    date = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self) -> str:
+        return self.message

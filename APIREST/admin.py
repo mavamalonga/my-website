@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 from django.contrib.auth.admin import UserAdmin
-from APIREST.models import User, Badge, Task, Project, CurriculumVitae, Analytic
+from APIREST.models import User, Badge, Task, Project, CurriculumVitae, Analytic, Message
 
 
 @admin.register(User)
@@ -38,3 +38,8 @@ class AnalyticAdmin(ModelAdmin):
 @admin.register(CurriculumVitae)
 class CurriculumVitaeAdmin(ModelAdmin):
     list_display = ('name', 'id')
+
+
+@admin.register(Message)
+class MessageAdmin(ModelAdmin):
+    list_display = ('name', 'mail', 'message', 'date')

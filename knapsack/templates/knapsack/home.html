@@ -20,12 +20,12 @@
       rel="stylesheet"
     />
 
-    <!--=============== SWIPER CSS ===============-->
+    <!--=============== CONTACT CSS ===============-->
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="{% static 'css/knapsack/style.css' %}" />
 
-    <title>My Portfolio</title>
+    <title>Alpha | Portfolio</title>
   </head>
   <body>
 
@@ -85,8 +85,7 @@
 
             <div class="home__buttons">
               <a
-                download=""
-                href="{% url 'curriculum_vitae' %}"
+                href="{{ curriculum_vitae.pdf.url }}"
                 class="button button--ghost"
               >
               Curriculum vitae
@@ -117,11 +116,6 @@
               <i class="bx bxl-instagram"></i>
             </a>
           </div>
-
-          <a href="#about" class="home__scroll">
-            <i class="bx bx-mouse home__scroll-icon"></i>
-            <span class="home__scroll-name">Scroll Down</span>
-          </a>
         </div>
         
       </section>
@@ -553,10 +547,8 @@
                 </a>
                 <i class="bx bx-x works__modal-close"></i>
 
-                <h3 class="works__modal-title">Product Designer</h3>
+                <h3 class="works__modal-title"></h3>
                 <p class="works__modal-description">
-                  Service with more than 3 years of experience. Providing
-                  quality work to clients and companies.
                 </p>
 
                 <span class="section__subtitle">Compétences</span><br>
@@ -564,33 +556,29 @@
                   <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      I develop the user interface.
                     </p>
                   </li>
 
                   <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
-                    <p class="works__modal-info">Web page development.</p>
+                    <p class="works__modal-info"></p>
                   </li>
 
                   <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      I create ux element interactions.
-                    </p>
-                  </li>
-
-                  <li class="works__modal-item" style="margin-top: -20px;">
-                    <i class="bx bx-check works__modal-icon"></i>
-                    <p class="works__modal-info">
-                      I position your company brand.
                     </p>
                   </li>
 
                   <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      Design and mockups of products for companies.
+                    </p>
+                  </li>
+
+                  <li class="works__modal-item" style="margin-top: -20px;">
+                    <i class="bx bx-check works__modal-icon"></i>
+                    <p class="works__modal-info">
                     </p>
                   </li>
                 </ul>
@@ -622,8 +610,6 @@
 
                 <h3 class="works__modal-title">Product Designer</h3>
                 <p class="works__modal-description">
-                  Service with more than 3 years of experience. Providing
-                  quality work to clients and companies.
                 </p>
 
                 <span class="section__subtitle">Compétences</span><br>
@@ -631,7 +617,6 @@
                   <li class="works__modal-item" style="margin-top: -20px;">
                     <i class="bx bx-check works__modal-icon"></i>
                     <p class="works__modal-info">
-                      I develop the user interface.
                     </p>
                   </li>
 
@@ -875,7 +860,7 @@
             <span class="badge badge-info"></span>
             <span class="badge badge-info"></span>
 
-            <h3 class="work__title">Web design</h3>
+            <h3 class="work__title"></h3>
 
             <a class="work__button" style="text-decoration: none; cursor: pointer;">
               See more <i class="bx bx-right-arrow-alt work__icon"></i>
@@ -888,7 +873,7 @@
                 </a>
                 <i class="bx bx-x works__modal-close"></i>
 
-                <h3 class="works__modal-title">Product Designer</h3>
+                <h3 class="works__modal-title"></h3>
                 <p class="works__modal-description">
                   Service with more than 3 years of experience. Providing
                   quality work to clients and companies.
@@ -1207,7 +1192,7 @@
       <section class="contact section" id="contact">
         <span class="section__subtitle">Contacts</span>
         <h2 class="section__title">Contactez moi</h2>
-
+        
         <div class="contact__container container grid">
           <div class="contact__content">
 
@@ -1227,26 +1212,31 @@
           </div>
 
           <div class="contact__content">
-
-            <form class="contact__form"> 
+            {% if message %}
+              <script>alert("{{ message }}")</script>
+            {% endif %}
+            <form class="contact__form" method="post" action="{% url 'home' %}">
+              {% csrf_token %}
               <div class="contact__form-div">
-                <label for="" class="contact__form-tag">Noms</label>
-                <input type="text" class="contact__form-input" placeholder="Votre nom"> 
+                <label for="id_name" class="contact__form-tag">Nom</label>
+                <input type="text" name="name" maxlength="100" required id="id_name" class="contact__form-input" placeholder="Votre nom"> 
               </div>
 
               
               <div class="contact__form-div">
-                <label for="" class="contact__form-tag">Mail</label>
-                <input type="email" class="contact__form-input" placeholder="Votre adresse mail"> 
+                <label for="id_mail" class="contact__form-tag">Mail</label>
+                <input type="email" name="mail" required id="id_mail" class="contact__form-input" placeholder="Votre adresse mail"> 
               </div>
 
               
               <div class="contact__form-div contact__form-area">
-                <label for="" class="contact__form-tag">Message</label>
-               <textarea class="contact__form-input" cols="30" rows="10" placeholder="Message"></textarea>
+                <label for="id_message" class="contact__form-tag">Message</label>
+               <textarea name="message" required id="id_message" class="contact__form-input" cols="30" rows="10" placeholder="Message"></textarea>
               </div>
 
-              <button class="button">Envoyer</button>
+              <button class="button" type="submit">
+                Envoyer
+              </button>
             </form>
           </div>
         </div>
@@ -1286,7 +1276,8 @@
 
 
         <span class="footer__copy">
-          Copyright © 2022 MAVA MALONGA Alpha - <a href="{% url 'mentions-legales' %}">Mentions légales</a>
+          Copyright © 2022 Alpha MAVA MALONGA<br>
+          <a href="{% url 'mentions-legales' %}">Mentions légales</a>
         </span>
 
       </div>
@@ -1294,8 +1285,6 @@
 
     <!--=============== SCROLLREVEAL ===============-->
     <script src="{% static 'js/knapsack/scrollreveal.min.js' %}"></script>
-
-    <!--=============== SWIPER JS ===============-->
 
     <!--=============== MIXITUP FILTER ===============-->
     <script src="{% static 'js/knapsack/mixitup.min.js' %}"></script>
@@ -1305,5 +1294,7 @@
 
     <!--=============== API REQUEST ===============-->
     <script src="{% static 'js/knapsack/api_request.js' %}"></script>
+
+    <!--=============== CONTACT JS ===============-->
   </body>
 </html>

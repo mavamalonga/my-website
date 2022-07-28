@@ -32,132 +32,19 @@
     <!--=============== HEADER ===============-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="" class="nav__logo">Mon Portfolio</a>
-
-        <div class="nav__menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="{% url 'home' %}" class="nav__link active-link">
-                <i class="bx bx-home-alt"></i>
-              </a>
-            </li>
-
-            <li class="nav__item">
-              <a href="{% url 'home' %}" class="nav__link">
-                <i class="bx bx-user"></i>
-              </a>
-            </li>
-
-            <li class="nav__item">
-              <a href="{% url 'home' %}" class="nav__link">
-                <i class="bx bx-book"></i>
-              </a>
-            </li>
-
-            <li class="nav__item">
-              <a href="{% url 'home' %}" class="nav__link">
-                <i class="bx bx-briefcase-alt-2"></i>
-              </a>
-            </li>
-
-            <li class="nav__item">
-              <a href="{% url 'home' %}" class="nav__link">
-                <i class="bx bx-message-square-detail"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- THEME CHANGE BUTTON  -->
-        <i class="bx bx-moon change-theme" id="theme-button"></i>
+        <a href="{% url 'home' %}" class="nav__logo">Mon Portfolio</a>
       </nav>
     </header>
 
     <!--=============== MAIN ===============-->
     <main class="main">
-      <!--=============== HOME ===============-->
-      <section class="home section" id="home">
-        <div class="home__container container grid">
-          <div class="home__data">
-            <!--<span class="home__greeting">Hello, I'm</span>-->
-            <h1 class="home__name">Alpha MAVA MALONGA</h1>
-            <h3 class="home__education">Développeur Back-End Python & Django</h3>
-
-            <div class="home__buttons">
-              <a
-                download=""
-                href="assets/pdf/Ansel-Cv.pdf"
-                class="button button--ghost"
-              >
-              Curriculum vitae
-              </a>
-              <a href="{% url 'home' %}" class="button button--ghost">Mon portfolio</a>
-            </div>
-          </div>
-
-          <div class="home__social">
-            <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="home__social-link" target='_blank'>
-              <i class="bx bxl-linkedin-square"></i>
-            </a>
-            <a
-              href="https://github.com/mavamalonga"
-              class="home__social-link" target='_blank'
-            >
-              <i class="bx bxl-github"></i>
-            </a>
-            <a
-              href="https://www.instagram.com/m_mlga/?hl=en"
-              class="home__social-link" target='_blank'
-            >
-              <i class="bx bxl-instagram"></i>
-            </a>
-          </div>
-        </div>
-        
-      </section>
+   
 
       {% block content %} {% endblock %}
 
     </main>
 
-    <!--=============== FOOTER ===============-->
-    <footer class="footer">
-      <div class="footer__container container">
-        <!--<h1 class="footer__title">Alpha</h1>-->
 
-        <ul class="footer__list">
-          <li>
-            <a href="{% url 'home' %}" class="footer__link">À propos</a>
-          </li>
-
-          <li>
-            <a href="{% url 'home' %}" class="footer__link">Compétences</a>
-          </li>
-
-          <li>
-            <a href="{% url 'home' %}" class="footer__link">Projets</a>
-          </li>
-        </ul>
-
-        <ul class="footer__social">
-          <a href="https://github.com/mavamalonga" class="footer__social-link">
-            <i class="bx bxl-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
-            <i class="bx bxl-linkedin-square"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/alpha-mava-malonga/" class="footer__social-link">
-            <i class="bx bxl-telegram"></i>
-          </a>
-        </ul>
-
-
-        <span class="footer__copy">
-          Copyright © 2022 MAVA MALONGA Alpha - <a href="{% url 'mentions-legales' %}">Mentions légales</a>
-        </span>
-
-      </div>
-    </footer>
 
     <!--=============== SCROLLREVEAL ===============-->
     <script src="{% static 'js/knapsack/scrollreveal.min.js' %}"></script>

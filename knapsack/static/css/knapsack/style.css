@@ -549,7 +549,7 @@ body.light-theme {
   position: fixed;
   inset: 0;
   background: hsla(var(--second-hue), 28%, 16%, 0.7);
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   display: grid;
   place-items: center;
   visibility: hidden;
@@ -560,7 +560,7 @@ body.light-theme {
 .services__modal-content, .works__modal-content {
   position: relative;
   background-color: var(--body-color);
-  padding: 4.5rem 1.5rem 2.5rem;
+  padding: 4rem 1.5rem 2rem;
   border-radius: 1.5rem;
 }
 .services__modal-title,
@@ -1099,4 +1099,3 @@ body.light-theme {
 
 
 }
-

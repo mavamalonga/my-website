@@ -175,3 +175,11 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv('SENTRY_SDK')
+EMAIL_HOST_USER = os.getenv('SENTRY_SDK')
+EMAIL_HOST_PASSWORD = os.getenv('SENTRY_SDK')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = os.getenv('SENTRY_SDK')
