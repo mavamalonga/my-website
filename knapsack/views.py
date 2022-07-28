@@ -24,7 +24,7 @@ def home(request):
 
     form = ContactForm()
 
-    # dowload cv 
+    # dowload cv
     curriculum_vitae = get_object_or_404(CurriculumVitae, pk=1)
 
     if request.method == 'POST':
